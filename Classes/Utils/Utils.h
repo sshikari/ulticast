@@ -14,8 +14,15 @@
 
 }
 
+// nilifies nulls. if NSNull, make nil, otherwise return obj.
++ (id) nilify: (id) obj;
 + (NSString*) valueOrDefault: (NSString*) value : (NSString*) def;
-	
++ (void) showTimeoutAlert : (id) deleg 
+						  :	(NSString*) buttonTitle
+						  : (NSString*) msg 
+						  : (NSString*) okButtonMsg
+						  : (NSString*) cancelButtonMsg;
 
++ (NSArray*) fromJSON: (NSArray*) arrayOfJSONObjects: (Class) clazz; 
 
 @end

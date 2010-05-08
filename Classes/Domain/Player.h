@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONUtils.h"
 
-
-@interface Player : NSObject {
+@interface Player : NSObject<NSCoding, JSONInit> {
 	long playerId;
 	int number;
-	NSString* shortName;
+	NSString* nickname;
 	NSString* firstName;
 	NSString* lastName;
 	NSString* position;
@@ -21,11 +21,13 @@
 
 @property long playerId;
 @property int number;
-@property (retain, nonatomic) NSString* shortName;
+@property (retain, nonatomic) NSString* nickname;
 @property (retain, nonatomic) NSString* firstName;
 @property (retain, nonatomic) NSString* lastName;
 @property (retain, nonatomic) NSString* position;
 @property (retain, nonatomic) NSArray* teams;
+
+//- (id) initFromDictionary: (NSDictionary*) dict;
 
 - (id) initWith: (int) num : (NSString*) firstName;
 - (NSString*) idString;

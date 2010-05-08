@@ -1,0 +1,2 @@
+#define kDisabledTextColor      [UIColor grayColor]
+

@@ -77,11 +77,20 @@ NSString *const TIME_TIMEOUT_END = @"TIMEOUT_END";
 	return [[[TimeEvent alloc] initWithParams: TIME_TIMEOUT_END: team] autorelease];				
 }
 
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:timeType forKey:@"timeType"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	timeType = [[aDecoder decodeObjectForKey:@"timeType"] retain];
+	return self;
+}
+
 -(id) proxyForJson {
 	NSMutableDictionary *dict = [super proxyForJson];
-	[dict setValue:eventType forKey:@"eventType"];	
 	[dict setValue:timeType forKey:@"timeType"];	
-	[dict setValue:team forKey:@"team"];
 	return dict;
 }
 

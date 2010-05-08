@@ -16,6 +16,8 @@
 #import "Team.h"
 #import "Player.h"
 
+
+
 @interface GameLogMgr (private)
 - (id) initWith:(long) gId;
 - (void) addEvent:(GameEvent*)gameEvent;
@@ -24,58 +26,68 @@
 - (void) startTimeEvent: (TimeEvent*) timeEvent;
 - (void) stopTimeEvent: (TimeEvent*) timeEvent;
 
+			
 @end
 
 
 @implementation GameLogMgr
 
 // map of game ids to loggers
-static NSMutableDictionary* gameLoggerMap;
+//static NSMutableDictionary* gameLoggerMap;
 
 @synthesize gameId;
 @synthesize gameState;
-@synthesize unsentEvents;
-@synthesize sentEvents;
+@synthesize gameInfo;
+@synthesize events;
+//@synthesize unsentEvents;
+//@synthesize sentEvents;
 
-+ (void)initialize {
-    gameLoggerMap = [[NSMutableDictionary dictionary] retain];
-	// TODO move this initializer.
-	// right now, once you load a game logger, you may have data to push.
-	[DataPushMgr sharedInstance];
-}
 
-+ (NSArray*) allGameLogMgrs {
-    return [gameLoggerMap allValues];
-}
-+ (GameLogMgr*) newGameLogMgr {
-	return nil;  // TODO	
-}
-	
-	
-+(GameLogMgr*) gameLogMgr: (long)gid {
-	GameLogMgr* logMgr = [gameLoggerMap objectForKey:[NSNumber numberWithLong:gid]];
-	if (logMgr == NULL) {
-		NSLog(@"Adding log mgr for gameId: %d", gid);
-		logMgr = [[GameLogMgr alloc] initWith: gid];
-		[gameLoggerMap setObject:logMgr forKey:[NSNumber numberWithLong:gid]];	
-	}
-	
-	[logMgr autorelease];
-	return logMgr;
-}
 
-- (id) initWith:(long) gId {
-	if (self = [super init]) {
-		[self setGameId:gId];
-		[self setUnsentEvents:[NSMutableArray array]];
-		[self setSentEvents:[NSMutableArray array]];
-	}
-	return self;
-}
+
+//+(GameLogMgr*) gameLogMgr: (long)gid {
+//	GameLogMgr* logMgr = [gameLoggerMap objectForKey:[NSNumber numberWithLong:gid]];
+//	if (logMgr == NULL) {
+//		NSLog(@"Adding log mgr for gameId: %d", gid);
+//		logMgr = [[GameLogMgr alloc] initWith: gid];
+//		[gameLoggerMap setObject:logMgr forKey:[NSNumber numberWithLong:gid]];
+//	}
+//	
+//	[logMgr autorelease];
+//	return logMgr;
+//}
+
+
+	 
+//- (GameLogMgr*) getGameInProgress {
+//	NSData *inProgressGame = [[NSUserDefaults standardUserDefaults] objectForKey:IN_PROGRESS_GAME];
+//	if (inProgressGame != nil) {
+//		return [NSKeyedUnarchiver unarchiveObjectWithData:inProgressGame];
+//	}
+//	
+//	return nil;
+//}
+
 
 #pragma mark -
 #pragma mark class instance methods
 
+- (id) initWith:(long) gId {
+	if (self = [super init]) {
+		[self setGameId:gId];
+		[self setEvents:[NSMutableArray array]];
+
+		//[self setUnsentEvents:[NSMutableArray array]];
+		//[self setSentEvents:[NSMutableArray array]];
+	}
+	return self;
+}
+
+- (id) initWithTeams: (Team*) homeTeam: (Team*) awayTeam: (long) gid {
+	self = [self initWith:gid];
+	[self setGameState: [[GameState alloc] initWithTeams:homeTeam: awayTeam]];
+	return self;
+}
 
 /*
  
@@ -101,6 +113,12 @@ GameLogger
 - (void) endGame {
 	//[self addEvent:[GameEvent endGameEvent]];
 	[self addEvent:[TimeEvent endGame]];
+	[gameState release];
+	//[self setGameId:NO_GAME_IN_PROGRESS_ID];	
+}
+
+-(BOOL) isGameOver {
+	return gameState.gameOver;	
 }
 
 - (void) timeoutTeam1 {	
@@ -129,6 +147,7 @@ GameLogger
 }
 - (void) timeoutEndGame{	
 	[self stopTimeEvent: [TimeEvent endGame]];		
+	gameState.gameOver = YES;	
 }
 
 - (void) stopTimeEvent: (TimeEvent*) timeEvent {
@@ -153,9 +172,6 @@ GameLogger
 //    return gameRunningPriorToCall;    		
 //}
 
-- (void) addEvent: (GameEvent*) event {
-	[unsentEvents addObject: event];		
-}
 
 
 - (int) passes {
@@ -163,9 +179,7 @@ GameLogger
 }
 - (void) pass : (Player*) player{
 	gameState.passes++;
-	PassEvent* passEvent = [[PassEvent alloc] init];	
-	[passEvent setPlayer:player];
-	[passEvent setTeam:[self offensiveTeam]];
+	PassEvent* passEvent = [[PassEvent alloc] initWithParams:[self offensiveTeam] : player];	
 	[self addEvent:passEvent];
 	
 //	[[PassEvent alloc] initWithParams: [self offensiveTeam]: player]
@@ -280,6 +294,10 @@ GameLogger
 	return gameState.gameTimeRunning;	
 }
 
+- (int) tickGameTime {
+	gameState.gameTimeLeftSecs = gameState.gameTimeLeftSecs - 1;
+	return gameState.gameTimeLeftSecs;
+}
 
 - (void) turnover {	 	
 	gameState.team1HasPossession = !gameState.team1HasPossession;		
@@ -314,26 +332,51 @@ GameLogger
 	NSLog(@"%@", [self events]);
 }
 
--(NSArray*) events {
-   	@synchronized(self) {
-		// TODO there must be a better way to combine and then make immutable an array...
-		NSMutableArray* combined = [NSMutableArray arrayWithArray:unsentEvents];
-		[combined addObjectsFromArray:sentEvents];		
-		return [NSArray arrayWithArray:combined];
-	}
-	return nil;
+
+- (void) addEvent: (GameEvent*) event {
+	[[DataPushMgr sharedInstance] sendEvent:gameId: event];
+	[events addObject: event];
 }
+	 
+//-(NSArray*) events {
+//   	@synchronized(self) {
+//		// TODO there must be a better way to combine and then make immutable an array...
+//		NSMutableArray* combined = [NSMutableArray arrayWithArray:unsentEvents];
+//		[combined addObjectsFromArray:sentEvents];		
+//		return [NSArray arrayWithArray:combined];
+//	}
+//	return nil;
+//}
 
 // transfer unsent events to sent events list, return unsent items
--(NSArray*) transferUnsent {
-   	@synchronized(self) {
-		NSArray* wasUnsent =[NSArray arrayWithArray: unsentEvents];
-		[sentEvents addObjectsFromArray:unsentEvents];
-		[unsentEvents removeAllObjects];
-		return wasUnsent;
-	}
-	return nil;
+//-(NSArray*) transferUnsent {
+//   	@synchronized(self) {
+//		NSArray* wasUnsent =[NSArray arrayWithArray: unsentEvents];
+//		[sentEvents addObjectsFromArray:unsentEvents];
+//		[unsentEvents removeAllObjects];
+//		return wasUnsent;
+//	}
+//	return nil;
+//}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeInt:gameId forKey: @"gameId"];
+	[aCoder encodeObject:gameState forKey:@"gameState"];
+	//[aCoder encodeObject:unsentEvents forKey:@"unsentEvents"];
+	//[aCoder encodeObject:sentEvents forKey:@"sentEvents"];
+	[aCoder encodeObject:gameInfo forKey:@"gameInfo"];
 }
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	gameId = [aDecoder decodeIntForKey:@"gameId"];
+	gameState = [[aDecoder decodeObjectForKey:@"gameState"] retain];
+	//unsentEvents = [[aDecoder decodeObjectForKey:@"unsentEvents"] retain]; 
+	//sentEvents = [[aDecoder decodeObjectForKey:@"sentEvents"] retain]; 
+	gameInfo = [[aDecoder decodeObjectForKey:@"gameInfo"] retain]; 
+	return self;
+}
+
 
 #pragma mark -
 #pragma mark Singleton methods

@@ -18,6 +18,7 @@
 @interface TurnViewController (private)
 - (void) createSelectListViewController: (NSArray*) dataSource: (id) curStatus:
 										 (void*) propertyConst: (NSString*) controllerTitle;
+- (NSString*) validateFields;
 @end
 
 
@@ -54,12 +55,21 @@ static NSArray* LABEL_LIST;
 - (void) doneSave {	
 	// set notes here b/c when you edit notes, then directly click save instead of done, notes doesn't get saved.
 	[turnEvent setNotes: notesTextField.text];	
-	[gameLogMgr turn: turnEvent];	
-	[parentDelegate performSelector: updateSuccessCallBack
-						 withObject: nil];			
-	[self.navigationController popViewControllerAnimated:YES];	
+	NSString *error = [self validateFields];
+	if (error) {
+		[Utils showTimeoutAlert:self :@"Error" : error : nil : @"Ok"];
+	} else {
+		[parentDelegate performSelector: updateSuccessCallBack
+						 withObject: turnEvent];			
+		[self.navigationController popViewControllerAnimated:YES];	
+	}
 }
-
+- (NSString*) validateFields {
+	if ([turnEvent.turnType length] == 0) {
+		return @"Please select a type";	
+	}
+	return nil;
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

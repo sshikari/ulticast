@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Player.h"
 
-@interface Team : NSObject {
+@interface Team : NSObject<NSCoding, JSONInit> {
 	long teamId;
 	NSString* name;
 	// Location *location;

@@ -11,10 +11,12 @@
 @interface UltimateScorerTabAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
+	UINavigationController *firstMenuNavController;
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UINavigationController *firstMenuNavController;
 @end
 

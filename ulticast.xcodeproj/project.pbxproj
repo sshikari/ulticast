@@ -84,7 +84,6 @@
 		1237AD6B116FB60300C263E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACF7116FB60200C263E3 /* Reachability.m */; };
 		1237AD6C116FB60300C263E3 /* DataPushMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFA116FB60200C263E3 /* DataPushMgr.m */; };
 		1237AD6D116FB60300C263E3 /* GameLogMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFC116FB60200C263E3 /* GameLogMgr.m */; };
-		1237AD6E116FB60300C263E3 /* UltimateScorerTabAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFE116FB60200C263E3 /* UltimateScorerTabAppDelegate.m */; };
 		1237AD6F116FB60300C263E3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD01116FB60200C263E3 /* Utils.m */; };
 		1237AD70116FB60300C263E3 /* CallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD03116FB60200C263E3 /* CallView.xib */; };
 		1237AD71116FB60300C263E3 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD05116FB60200C263E3 /* CallViewController.m */; };
@@ -108,6 +107,57 @@
 		1237AE79116FC02700C263E3 /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE73116FC02700C263E3 /* GTMObjC2Runtime.m */; };
 		1237AE7A116FC02700C263E3 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE75116FC02700C263E3 /* GTMSenTestCase.m */; };
 		1237AE7B116FC02700C263E3 /* RunIPhoneUnitTest.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1237AE76116FC02700C263E3 /* RunIPhoneUnitTest.sh */; };
+		1237AED0117040BA00C263E3 /* UltimateScorerTabAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFE116FB60200C263E3 /* UltimateScorerTabAppDelegate.m */; };
+		1237AFE11171227000C263E3 /* FirstMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFDF1171227000C263E3 /* FirstMenuViewController.m */; };
+		1237AFE21171227000C263E3 /* FirstMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AFE01171227000C263E3 /* FirstMenuViewController.xib */; };
+		1237AFE31171227000C263E3 /* FirstMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFDF1171227000C263E3 /* FirstMenuViewController.m */; };
+		1237AFE41171227000C263E3 /* FirstMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AFE01171227000C263E3 /* FirstMenuViewController.xib */; };
+		1237B02E11712BD100C263E3 /* QuickGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B02C11712BD100C263E3 /* QuickGameViewController.m */; };
+		1237B02F11712BD100C263E3 /* QuickGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B02D11712BD100C263E3 /* QuickGameViewController.xib */; };
+		1237B03011712BD100C263E3 /* QuickGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B02C11712BD100C263E3 /* QuickGameViewController.m */; };
+		1237B03111712BD100C263E3 /* QuickGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B02D11712BD100C263E3 /* QuickGameViewController.xib */; };
+		1237B052117130C600C263E3 /* QuickGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B051117130C600C263E3 /* QuickGameInfo.m */; };
+		1237B053117130C600C263E3 /* QuickGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B051117130C600C263E3 /* QuickGameInfo.m */; };
+		1237B059117131F600C263E3 /* GameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B058117131F600C263E3 /* GameLocation.m */; };
+		1237B05A117131F600C263E3 /* GameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B058117131F600C263E3 /* GameLocation.m */; };
+		1237B07B11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */; };
+		1237B07C11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */; };
+		1237B2971171A26700C263E3 /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B2951171A26700C263E3 /* TeamsViewController.m */; };
+		1237B2981171A26700C263E3 /* TeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B2961171A26700C263E3 /* TeamsViewController.xib */; };
+		1237B2991171A26700C263E3 /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B2951171A26700C263E3 /* TeamsViewController.m */; };
+		1237B29A1171A26700C263E3 /* TeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B2961171A26700C263E3 /* TeamsViewController.xib */; };
+		1237B35B11726CCF00C263E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B35911726CCF00C263E3 /* LoginViewController.m */; };
+		1237B35C11726CCF00C263E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B35A11726CCF00C263E3 /* LoginViewController.xib */; };
+		1237B35D11726CCF00C263E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B35911726CCF00C263E3 /* LoginViewController.m */; };
+		1237B35E11726CCF00C263E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B35A11726CCF00C263E3 /* LoginViewController.xib */; };
+		1237B3B51172881D00C263E3 /* AuthenticationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B3B41172881D00C263E3 /* AuthenticationMgr.m */; };
+		1237B3B61172881D00C263E3 /* AuthenticationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B3B41172881D00C263E3 /* AuthenticationMgr.m */; };
+		1237B98D117BCEF900C263E3 /* GameLogMgrPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */; };
+		1237B98E117BCEF900C263E3 /* GameLogMgrPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */; };
+		1237BAFC117C11D000C263E3 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEA117C11D000C263E3 /* FBConnectGlobal.m */; };
+		1237BAFD117C11D000C263E3 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEC117C11D000C263E3 /* FBSession.m */; };
+		1237BAFE117C11D000C263E3 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEE117C11D000C263E3 /* FBRequest.m */; };
+		1237BAFF117C11D000C263E3 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF0117C11D000C263E3 /* FBXMLHandler.m */; };
+		1237BB00117C11D000C263E3 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF2117C11D000C263E3 /* FBLoginButton.m */; };
+		1237BB01117C11D000C263E3 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF4117C11D000C263E3 /* FBDialog.m */; };
+		1237BB02117C11D000C263E3 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF6117C11D000C263E3 /* FBLoginDialog.m */; };
+		1237BB03117C11D000C263E3 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF8117C11D000C263E3 /* FBPermissionDialog.m */; };
+		1237BB04117C11D000C263E3 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAFA117C11D000C263E3 /* FBStreamDialog.m */; };
+		1237BB05117C11D000C263E3 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1237BAFB117C11D000C263E3 /* FBConnect.bundle */; };
+		1237BB06117C11D000C263E3 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEA117C11D000C263E3 /* FBConnectGlobal.m */; };
+		1237BB07117C11D000C263E3 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEC117C11D000C263E3 /* FBSession.m */; };
+		1237BB08117C11D000C263E3 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAEE117C11D000C263E3 /* FBRequest.m */; };
+		1237BB09117C11D000C263E3 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF0117C11D000C263E3 /* FBXMLHandler.m */; };
+		1237BB0A117C11D000C263E3 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF2117C11D000C263E3 /* FBLoginButton.m */; };
+		1237BB0B117C11D000C263E3 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF4117C11D000C263E3 /* FBDialog.m */; };
+		1237BB0C117C11D000C263E3 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF6117C11D000C263E3 /* FBLoginDialog.m */; };
+		1237BB0D117C11D000C263E3 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAF8117C11D000C263E3 /* FBPermissionDialog.m */; };
+		1237BB0E117C11D000C263E3 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237BAFA117C11D000C263E3 /* FBStreamDialog.m */; };
+		1237BB0F117C11D000C263E3 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1237BAFB117C11D000C263E3 /* FBConnect.bundle */; };
+		1250007A117D3AE7008CC83C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12500079117D3AE7008CC83C /* Default.png */; };
+		1250FE70117C2042008CC83C /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1250FE6F117C2042008CC83C /* Connect_iphone.png */; };
+		1250FE71117C2042008CC83C /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1250FE6F117C2042008CC83C /* Connect_iphone.png */; };
+		12A0E3211194BAB300097216 /* ultimateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A0E3201194BAB300097216 /* ultimateicon.png */; };
 		12ABC1661151D1AE005625CC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1651151D1AE005625CC /* CFNetwork.framework */; };
 		12ABC1681151D1C6005625CC /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */; };
 		12ABC16A1151D1D2005625CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1691151D1D2005625CC /* SystemConfiguration.framework */; };
@@ -219,6 +269,54 @@
 		1237AE74116FC02700C263E3 /* GTMSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMSenTestCase.h; sourceTree = "<group>"; };
 		1237AE75116FC02700C263E3 /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSenTestCase.m; sourceTree = "<group>"; };
 		1237AE76116FC02700C263E3 /* RunIPhoneUnitTest.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunIPhoneUnitTest.sh; sourceTree = "<group>"; };
+		1237AFDE1171227000C263E3 /* FirstMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstMenuViewController.h; sourceTree = "<group>"; };
+		1237AFDF1171227000C263E3 /* FirstMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstMenuViewController.m; sourceTree = "<group>"; };
+		1237AFE01171227000C263E3 /* FirstMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstMenuViewController.xib; sourceTree = "<group>"; };
+		1237B02B11712BD100C263E3 /* QuickGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickGameViewController.h; sourceTree = "<group>"; };
+		1237B02C11712BD100C263E3 /* QuickGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickGameViewController.m; sourceTree = "<group>"; };
+		1237B02D11712BD100C263E3 /* QuickGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickGameViewController.xib; sourceTree = "<group>"; };
+		1237B050117130C600C263E3 /* QuickGameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickGameInfo.h; sourceTree = "<group>"; };
+		1237B051117130C600C263E3 /* QuickGameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickGameInfo.m; sourceTree = "<group>"; };
+		1237B057117131F600C263E3 /* GameLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLocation.h; sourceTree = "<group>"; };
+		1237B058117131F600C263E3 /* GameLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLocation.m; sourceTree = "<group>"; };
+		1237B07911713E3B00C263E3 /* ReferenceDataMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceDataMgr.h; sourceTree = "<group>"; };
+		1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceDataMgr.m; sourceTree = "<group>"; };
+		1237B2941171A26700C263E3 /* TeamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamsViewController.h; sourceTree = "<group>"; };
+		1237B2951171A26700C263E3 /* TeamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
+		1237B2961171A26700C263E3 /* TeamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsViewController.xib; sourceTree = "<group>"; };
+		1237B35811726CCF00C263E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1237B35911726CCF00C263E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1237B35A11726CCF00C263E3 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1237B3B31172881D00C263E3 /* AuthenticationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationMgr.h; sourceTree = "<group>"; };
+		1237B3B41172881D00C263E3 /* AuthenticationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationMgr.m; sourceTree = "<group>"; };
+		1237B797117B907800C263E3 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		1237B98B117BCEF900C263E3 /* GameLogMgrPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogMgrPool.h; sourceTree = "<group>"; };
+		1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogMgrPool.m; sourceTree = "<group>"; };
+		1237BAE8117C11D000C263E3 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBConnect.h; sourceTree = SOURCE_ROOT; };
+		1237BAE9117C11D000C263E3 /* FBConnectGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnectGlobal.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBConnectGlobal.h; sourceTree = SOURCE_ROOT; };
+		1237BAEA117C11D000C263E3 /* FBConnectGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBConnectGlobal.m; path = ../../code/web/ulticast/facebook/src/FBConnectGlobal.m; sourceTree = SOURCE_ROOT; };
+		1237BAEB117C11D000C263E3 /* FBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBSession.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBSession.h; sourceTree = SOURCE_ROOT; };
+		1237BAEC117C11D000C263E3 /* FBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBSession.m; path = ../../code/web/ulticast/facebook/src/FBSession.m; sourceTree = SOURCE_ROOT; };
+		1237BAED117C11D000C263E3 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBRequest.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBRequest.h; sourceTree = SOURCE_ROOT; };
+		1237BAEE117C11D000C263E3 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBRequest.m; path = ../../code/web/ulticast/facebook/src/FBRequest.m; sourceTree = SOURCE_ROOT; };
+		1237BAEF117C11D000C263E3 /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXMLHandler.h; path = ../../code/web/ulticast/facebook/src/FBXMLHandler.h; sourceTree = SOURCE_ROOT; };
+		1237BAF0117C11D000C263E3 /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBXMLHandler.m; path = ../../code/web/ulticast/facebook/src/FBXMLHandler.m; sourceTree = SOURCE_ROOT; };
+		1237BAF1117C11D000C263E3 /* FBLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginButton.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBLoginButton.h; sourceTree = SOURCE_ROOT; };
+		1237BAF2117C11D000C263E3 /* FBLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginButton.m; path = ../../code/web/ulticast/facebook/src/FBLoginButton.m; sourceTree = SOURCE_ROOT; };
+		1237BAF3117C11D000C263E3 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBDialog.h; sourceTree = SOURCE_ROOT; };
+		1237BAF4117C11D000C263E3 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBDialog.m; path = ../../code/web/ulticast/facebook/src/FBDialog.m; sourceTree = SOURCE_ROOT; };
+		1237BAF5117C11D000C263E3 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginDialog.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBLoginDialog.h; sourceTree = SOURCE_ROOT; };
+		1237BAF6117C11D000C263E3 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginDialog.m; path = ../../code/web/ulticast/facebook/src/FBLoginDialog.m; sourceTree = SOURCE_ROOT; };
+		1237BAF7117C11D000C263E3 /* FBPermissionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBPermissionDialog.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBPermissionDialog.h; sourceTree = SOURCE_ROOT; };
+		1237BAF8117C11D000C263E3 /* FBPermissionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBPermissionDialog.m; path = ../../code/web/ulticast/facebook/src/FBPermissionDialog.m; sourceTree = SOURCE_ROOT; };
+		1237BAF9117C11D000C263E3 /* FBStreamDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStreamDialog.h; path = ../../code/web/ulticast/facebook/src/FBConnect/FBStreamDialog.h; sourceTree = SOURCE_ROOT; };
+		1237BAFA117C11D000C263E3 /* FBStreamDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStreamDialog.m; path = ../../code/web/ulticast/facebook/src/FBStreamDialog.m; sourceTree = SOURCE_ROOT; };
+		1237BAFB117C11D000C263E3 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = ../../code/web/ulticast/facebook/src/FBConnect.bundle; sourceTree = SOURCE_ROOT; };
+		12500062117D34F2008CC83C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12500079117D3AE7008CC83C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1250FE6F117C2042008CC83C /* Connect_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Connect_iphone.png; sourceTree = "<group>"; };
+		1250FF8B117D007E008CC83C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		12A0E3201194BAB300097216 /* ultimateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ultimateicon.png; sourceTree = "<group>"; };
 		12ABC1651151D1AE005625CC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		12ABC1691151D1D2005625CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -280,6 +378,9 @@
 		1237ACBC116FB60200C263E3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				12A0E3201194BAB300097216 /* ultimateicon.png */,
+				12500079117D3AE7008CC83C /* Default.png */,
+				1250FE6F117C2042008CC83C /* Connect_iphone.png */,
 				1237ACBD116FB60200C263E3 /* all.png */,
 				1237ACBE116FB60200C263E3 /* faves.png */,
 				1237ACBF116FB60200C263E3 /* frisbee.png */,
@@ -341,6 +442,9 @@
 		1237ACD3116FB60200C263E3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1237B797117B907800C263E3 /* JSONUtils.h */,
+				1237B057117131F600C263E3 /* GameLocation.h */,
+				1237B058117131F600C263E3 /* GameLocation.m */,
 				1237ACD4116FB60200C263E3 /* CallEvent.h */,
 				1237ACD5116FB60200C263E3 /* CallEvent.m */,
 				1237ACD6116FB60200C263E3 /* GameEvent.h */,
@@ -359,6 +463,8 @@
 				1237ACE3116FB60200C263E3 /* TimeEvent.m */,
 				1237ACE4116FB60200C263E3 /* TurnEvent.h */,
 				1237ACE5116FB60200C263E3 /* TurnEvent.m */,
+				1237B050117130C600C263E3 /* QuickGameInfo.h */,
+				1237B051117130C600C263E3 /* QuickGameInfo.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -401,6 +507,12 @@
 				1237ACFC116FB60200C263E3 /* GameLogMgr.m */,
 				1237ACFD116FB60200C263E3 /* UltimateScorerTabAppDelegate.h */,
 				1237ACFE116FB60200C263E3 /* UltimateScorerTabAppDelegate.m */,
+				1237B07911713E3B00C263E3 /* ReferenceDataMgr.h */,
+				1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */,
+				1237B3B31172881D00C263E3 /* AuthenticationMgr.h */,
+				1237B3B41172881D00C263E3 /* AuthenticationMgr.m */,
+				1237B98B117BCEF900C263E3 /* GameLogMgrPool.h */,
+				1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -410,6 +522,7 @@
 			children = (
 				1237AD00116FB60200C263E3 /* Utils.h */,
 				1237AD01116FB60200C263E3 /* Utils.m */,
+				1250FF8B117D007E008CC83C /* Constants.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -417,6 +530,9 @@
 		1237AD02116FB60200C263E3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1237B02B11712BD100C263E3 /* QuickGameViewController.h */,
+				1237B02C11712BD100C263E3 /* QuickGameViewController.m */,
+				1237B02D11712BD100C263E3 /* QuickGameViewController.xib */,
 				1237AD03116FB60200C263E3 /* CallView.xib */,
 				1237AD04116FB60200C263E3 /* CallViewController.h */,
 				1237AD05116FB60200C263E3 /* CallViewController.m */,
@@ -442,6 +558,15 @@
 				1237AD19116FB60300C263E3 /* TurnViewController.h */,
 				1237AD1A116FB60300C263E3 /* TurnViewController.m */,
 				1237AD1B116FB60300C263E3 /* TurnViewController.xib */,
+				1237AFDE1171227000C263E3 /* FirstMenuViewController.h */,
+				1237AFDF1171227000C263E3 /* FirstMenuViewController.m */,
+				1237AFE01171227000C263E3 /* FirstMenuViewController.xib */,
+				1237B2941171A26700C263E3 /* TeamsViewController.h */,
+				1237B2951171A26700C263E3 /* TeamsViewController.m */,
+				1237B2961171A26700C263E3 /* TeamsViewController.xib */,
+				1237B35811726CCF00C263E3 /* LoginViewController.h */,
+				1237B35911726CCF00C263E3 /* LoginViewController.m */,
+				1237B35A11726CCF00C263E3 /* LoginViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,6 +596,34 @@
 			path = "Google-Testing";
 			sourceTree = "<group>";
 		};
+		1237BAE7117C11D000C263E3 /* FBConnect */ = {
+			isa = PBXGroup;
+			children = (
+				1237BAE8117C11D000C263E3 /* FBConnect.h */,
+				1237BAE9117C11D000C263E3 /* FBConnectGlobal.h */,
+				1237BAEA117C11D000C263E3 /* FBConnectGlobal.m */,
+				1237BAEB117C11D000C263E3 /* FBSession.h */,
+				1237BAEC117C11D000C263E3 /* FBSession.m */,
+				1237BAED117C11D000C263E3 /* FBRequest.h */,
+				1237BAEE117C11D000C263E3 /* FBRequest.m */,
+				1237BAEF117C11D000C263E3 /* FBXMLHandler.h */,
+				1237BAF0117C11D000C263E3 /* FBXMLHandler.m */,
+				1237BAF1117C11D000C263E3 /* FBLoginButton.h */,
+				1237BAF2117C11D000C263E3 /* FBLoginButton.m */,
+				1237BAF3117C11D000C263E3 /* FBDialog.h */,
+				1237BAF4117C11D000C263E3 /* FBDialog.m */,
+				1237BAF5117C11D000C263E3 /* FBLoginDialog.h */,
+				1237BAF6117C11D000C263E3 /* FBLoginDialog.m */,
+				1237BAF7117C11D000C263E3 /* FBPermissionDialog.h */,
+				1237BAF8117C11D000C263E3 /* FBPermissionDialog.m */,
+				1237BAF9117C11D000C263E3 /* FBStreamDialog.h */,
+				1237BAFA117C11D000C263E3 /* FBStreamDialog.m */,
+				1237BAFB117C11D000C263E3 /* FBConnect.bundle */,
+			);
+			name = FBConnect;
+			path = /Users/emailrchang/code/web/ulticast/facebook/src;
+			sourceTree = "<absolute>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +636,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				12500062117D34F2008CC83C /* Info.plist */,
+				1237BAE7117C11D000C263E3 /* FBConnect */,
 				1237AE6D116FC02700C263E3 /* Google-Testing */,
 				1237ACBB116FB60200C263E3 /* Resources */,
 				1237ACC4116FB60200C263E3 /* Classes */,
@@ -596,6 +751,12 @@
 				1237AD7C116FB60300C263E3 /* SetupView.xib in Resources */,
 				1237AD7F116FB60300C263E3 /* TurnViewController.xib in Resources */,
 				1237AE7B116FC02700C263E3 /* RunIPhoneUnitTest.sh in Resources */,
+				1237AFE41171227000C263E3 /* FirstMenuViewController.xib in Resources */,
+				1237B02F11712BD100C263E3 /* QuickGameViewController.xib in Resources */,
+				1237B2981171A26700C263E3 /* TeamsViewController.xib in Resources */,
+				1237B35C11726CCF00C263E3 /* LoginViewController.xib in Resources */,
+				1237BB05117C11D000C263E3 /* FBConnect.bundle in Resources */,
+				1250FE70117C2042008CC83C /* Connect_iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +776,14 @@
 				1237AD4A116FB60300C263E3 /* SelectionListViewController.xib in Resources */,
 				1237AD4B116FB60300C263E3 /* SetupView.xib in Resources */,
 				1237AD4E116FB60300C263E3 /* TurnViewController.xib in Resources */,
+				1237AFE21171227000C263E3 /* FirstMenuViewController.xib in Resources */,
+				1237B03111712BD100C263E3 /* QuickGameViewController.xib in Resources */,
+				1237B29A1171A26700C263E3 /* TeamsViewController.xib in Resources */,
+				1237B35E11726CCF00C263E3 /* LoginViewController.xib in Resources */,
+				1237BB0F117C11D000C263E3 /* FBConnect.bundle in Resources */,
+				1250FE71117C2042008CC83C /* Connect_iphone.png in Resources */,
+				1250007A117D3AE7008CC83C /* Default.png in Resources */,
+				12A0E3211194BAB300097216 /* ultimateicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +801,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#script_file=\"${PROJECT_DIR}/Google Testing/RunIPhoneUnitTest.sh\"\n#echo \"Running a custom build phase script: $script_file\"\n#$script_file\n\n${PROJECT_DIR}/Google-Testing/RunIPhoneUnitTest.sh\n\n#/Users/emailrchang/code/download/googleiphoneunittest/google-toolbox-for-mac-read-only/UnitTesting/RunIPhoneUnitTest.sh";
+			shellScript = "${PROJECT_DIR}/Google-Testing/RunIPhoneUnitTest.sh\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -665,7 +834,6 @@
 				1237AD6B116FB60300C263E3 /* Reachability.m in Sources */,
 				1237AD6C116FB60300C263E3 /* DataPushMgr.m in Sources */,
 				1237AD6D116FB60300C263E3 /* GameLogMgr.m in Sources */,
-				1237AD6E116FB60300C263E3 /* UltimateScorerTabAppDelegate.m in Sources */,
 				1237AD6F116FB60300C263E3 /* Utils.m in Sources */,
 				1237AD71116FB60300C263E3 /* CallViewController.m in Sources */,
 				1237AD73116FB60300C263E3 /* GameDetailsTableViewController.m in Sources */,
@@ -681,6 +849,25 @@
 				1237AE78116FC02700C263E3 /* GTMIPhoneUnitTestMain.m in Sources */,
 				1237AE79116FC02700C263E3 /* GTMObjC2Runtime.m in Sources */,
 				1237AE7A116FC02700C263E3 /* GTMSenTestCase.m in Sources */,
+				1237AED0117040BA00C263E3 /* UltimateScorerTabAppDelegate.m in Sources */,
+				1237AFE31171227000C263E3 /* FirstMenuViewController.m in Sources */,
+				1237B02E11712BD100C263E3 /* QuickGameViewController.m in Sources */,
+				1237B052117130C600C263E3 /* QuickGameInfo.m in Sources */,
+				1237B059117131F600C263E3 /* GameLocation.m in Sources */,
+				1237B07B11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */,
+				1237B2971171A26700C263E3 /* TeamsViewController.m in Sources */,
+				1237B35B11726CCF00C263E3 /* LoginViewController.m in Sources */,
+				1237B3B51172881D00C263E3 /* AuthenticationMgr.m in Sources */,
+				1237B98D117BCEF900C263E3 /* GameLogMgrPool.m in Sources */,
+				1237BAFC117C11D000C263E3 /* FBConnectGlobal.m in Sources */,
+				1237BAFD117C11D000C263E3 /* FBSession.m in Sources */,
+				1237BAFE117C11D000C263E3 /* FBRequest.m in Sources */,
+				1237BAFF117C11D000C263E3 /* FBXMLHandler.m in Sources */,
+				1237BB00117C11D000C263E3 /* FBLoginButton.m in Sources */,
+				1237BB01117C11D000C263E3 /* FBDialog.m in Sources */,
+				1237BB02117C11D000C263E3 /* FBLoginDialog.m in Sources */,
+				1237BB03117C11D000C263E3 /* FBPermissionDialog.m in Sources */,
+				1237BB04117C11D000C263E3 /* FBStreamDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +911,24 @@
 				1237AD49116FB60300C263E3 /* SelectionListViewController.m in Sources */,
 				1237AD4C116FB60300C263E3 /* SetupViewController.m in Sources */,
 				1237AD4D116FB60300C263E3 /* TurnViewController.m in Sources */,
+				1237AFE11171227000C263E3 /* FirstMenuViewController.m in Sources */,
+				1237B03011712BD100C263E3 /* QuickGameViewController.m in Sources */,
+				1237B053117130C600C263E3 /* QuickGameInfo.m in Sources */,
+				1237B05A117131F600C263E3 /* GameLocation.m in Sources */,
+				1237B07C11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */,
+				1237B2991171A26700C263E3 /* TeamsViewController.m in Sources */,
+				1237B35D11726CCF00C263E3 /* LoginViewController.m in Sources */,
+				1237B3B61172881D00C263E3 /* AuthenticationMgr.m in Sources */,
+				1237B98E117BCEF900C263E3 /* GameLogMgrPool.m in Sources */,
+				1237BB06117C11D000C263E3 /* FBConnectGlobal.m in Sources */,
+				1237BB07117C11D000C263E3 /* FBSession.m in Sources */,
+				1237BB08117C11D000C263E3 /* FBRequest.m in Sources */,
+				1237BB09117C11D000C263E3 /* FBXMLHandler.m in Sources */,
+				1237BB0A117C11D000C263E3 /* FBLoginButton.m in Sources */,
+				1237BB0B117C11D000C263E3 /* FBDialog.m in Sources */,
+				1237BB0C117C11D000C263E3 /* FBLoginDialog.m in Sources */,
+				1237BB0D117C11D000C263E3 /* FBPermissionDialog.m in Sources */,
+				1237BB0E117C11D000C263E3 /* FBStreamDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +1018,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/emailrchang/code/web/ulticast/facebook/src;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphonesimulator3.1.3;

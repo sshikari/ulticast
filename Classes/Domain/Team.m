@@ -7,7 +7,7 @@
 //
 
 #import "Team.h"
-
+#import "Utils.h"
 
 @implementation Team
 
@@ -15,6 +15,18 @@
 @synthesize name;
 @synthesize players;
 
+
+- (id) initFromDictionary: (NSDictionary*) dict {
+	self = [super init];
+	[self setTeamId:[[dict objectForKey: @"id"] longValue]];
+	[self setName:[dict objectForKey: @"teamName"]];
+	NSArray* playersArray = [Utils nilify:[dict objectForKey:@"players"]];
+	if (playersArray != nil && playersArray.count != 0) {		
+		NSArray *playersUnsorted = [Utils fromJSON:playersArray: Player.class];
+		[self setPlayers: [playersUnsorted sortedArrayUsingSelector:@selector(compare:)]];	
+	}
+	return self;
+}
 
 - (id) initWithName: (NSString*) n {
 	if (self = [super init]) {
@@ -39,9 +51,28 @@
 	return [name isEqualToString:n];
 }
 
+- (NSString*) description {
+    return name;	
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeInt:teamId forKey:@"team1"];
+	[aCoder encodeObject:name forKey:@"name"];
+	[aCoder encodeObject:players forKey:@"players"];		
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	teamId = [aDecoder decodeIntForKey:@"team1"];
+	name = [[aDecoder decodeObjectForKey:@"name"] retain];
+	players = [[aDecoder decodeObjectForKey:@"players"] retain];
+	return self;	
+}
+
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-	[dict setValue:name forKey:@"teamName"];
+	[dict setValue:[NSNumber numberWithInt: teamId] forKey:@"teamId"];
+	[dict setValue:name forKey:@"name"];
 	//[dict setValue:players forKey:@"players"];
 	return dict;	
 }

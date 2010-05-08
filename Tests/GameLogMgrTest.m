@@ -26,24 +26,24 @@
 
 
 - (NSArray*) createPlayers: (NSString*) prefix: (int) num {
-	NSMutableArray* names = [NSMutableArray arrayWithCapacity:num];
-	for (int i=0; i<num; i++) {
-		Player *p = [[Player alloc] init];
-		[p setShortName: [NSString stringWithFormat:@"%@-%d", prefix, i]];
-		[names addObject: p];
-		[p release];
-	}
-	return [names autorelease];
+//	NSMutableArray* names = [NSMutableArray arrayWithCapacity:num];
+//	for (int i=0; i<num; i++) {
+//		Player *p = [[Player alloc] init];
+//		[p setShortName: [NSString stringWithFormat:@"%@-%d", prefix, i]];
+//		[names addObject: p];
+//		[p release];
+//	}
+//	return [names autorelease];
 }
 
 - (void) testSomething {
-	NSLog(@"testing");
-	
-	Team *homeTeam = [[Team alloc] initWithName:@"Harvard"];
-	[homeTeam setPlayers: [self createPlayers: @"harvard": 7]];
-
-	Team *awayTeam = [[Team alloc] initWithName:@"Tufts"];
-	[awayTeam setPlayers: [self createPlayers: @"tufts": 7]];
+//	NSLog(@"testing");
+//	
+//	Team *homeTeam = [[Team alloc] initWithName:@"Harvard"];
+//	[homeTeam setPlayers: [self createPlayers: @"harvard": 7]];
+//
+//	Team *awayTeam = [[Team alloc] initWithName:@"Tufts"];
+//	[awayTeam setPlayers: [self createPlayers: @"tufts": 7]];
 
 //	GameLogMgr* mgr = [GameLogMgr newGameLogMgr: homeTeam: awayTeam];
 //    [mgr startGame]; 	

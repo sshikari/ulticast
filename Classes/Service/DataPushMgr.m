@@ -10,10 +10,14 @@
 #import "JSON.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-#import "GameLogMgr.h"
+#import "GameLogMgrPool.h"
 
 static DataPushMgr* sharedInstance = nil;
 
+@interface DataPushMgr(private) 
+- (void) addToUnsentEvents: (long) gameId: (NSArray*) events;
+
+@end
 
 @implementation DataPushMgr
 
@@ -28,6 +32,7 @@ static DataPushMgr* sharedInstance = nil;
         if (sharedInstance == nil)
 			sharedInstance = [[DataPushMgr alloc] init];
     }
+		
     return sharedInstance;
 }
 
@@ -94,86 +99,62 @@ static DataPushMgr* sharedInstance = nil;
 	 - post all event data
 	 - posting multiple events
 	 */
+	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/testapp/event/saveEvents"];
 	while(YES) {
 		NSLog(@"Trying to push...");
-//		NSString* gameId = @"2";
-//		// Construct a request.
-//		NSString *urlString = [NSString stringWithFormat:[self pushEventsURL], gameId];
-//		NSURL *url = [NSURL URLWithString:urlString];
-//	
-//		// Get the contents of the URL as a string, and parse the JSON into Foundation objects.
-//		NSString *jsonString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-//		NSLog(@"return str: %@", jsonString);
-//		NSDictionary *results = [jsonString JSONValue];
-//		NSLog(@"return json obj: %@", results);	
-
-		NSArray* logMgrs = [GameLogMgr allGameLogMgrs];
-		if ([logMgrs count] != 0) {
-			for (GameLogMgr* lMgr in logMgrs) {
-				NSURL *url = [NSURL URLWithString:@"http://localhost:8080/testapp/event/saveEvents"];
-				//ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-				
-				long gameId = [lMgr gameId];
-				NSLog(@"Pushing for gameId : %d", gameId);
-					
-				NSArray* events;
+		@synchronized(unsentEventsMap) {
+			NSNumber *gameId;
+			for (gameId in unsentEventsMap) {
+				NSLog(@"Pushing for gameId : %@", gameId);
+				NSMutableArray* events = [unsentEventsMap objectForKey:gameId];
+				NSLog(@"events: %@", events);
 				@try {
-					events = [lMgr transferUnsent];
 					if ([events count] != 0) {
-						
-					
-//						for (GameEvent* gameEvent in events) {
 							ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-//														
-//							/**
-//							 - gameId
-//							 - event list
-//							    - event data - type, teams, players, etc.							 
-//							    - some verification key
-//							 
-//							 */
-//							NSLog(@"Posting event : %@", [gameEvent JSONRepresentation]);
-//							[request setPostValue:[gameEvent eventType] forKey:@"title"];
-//							[request setPostValue:[gameEvent JSONRepresentation] forKey:@"author"];
-//							[request startSynchronous];
-//							NSError *error = [request error];
-//							if (!error) {
-//								NSString *response = [request responseString];
-//								NSLog(@"response : %@", response);
-//							} // what if there is an error?  keep trying...										
-//						}	
 							NSLog(@"Posting event : %@", [events JSONRepresentation]);
 						
-							[request setPostValue:[NSNumber numberWithInt: gameId] forKey:@"gameId"];
+							[request setPostValue:gameId forKey:@"gameId"];
 							[request setPostValue:[events JSONRepresentation] forKey:@"eventList"];
 							[request startSynchronous];  // TODO make asychronous
 							NSError *error = [request error];
-							if (!error) {
+							if (error != nil || [request responseStatusCode] != 200) {
+								NSString *response = [request responseString];
+								NSLog(@"Error code: %d : %@", [request responseStatusCode], response);
+								// don't clear events list.  retry later
+							} else {
 								NSString *response = [request responseString];
 								NSLog(@"response : %@", response);
+								
+								[events removeAllObjects]; 
 							} // what if there is an error?  keep trying...																						
-					}				
+					}
 				}
 				@catch (NSException * exception) {
 					NSLog(@"caught %@: %@, adding unsent events : %@ for gameId : %d", [exception name], [exception reason], events, gameId);
 					// add to unsent events queue. try again next time.
-					NSMutableArray* unsentEvents = [unsentEventsMap objectForKey:[NSNumber numberWithLong:gameId]];
-					if (unsentEvents == nil) {
-						unsentEvents = [NSMutableArray arrayWithCapacity:[events count]];	
-					}
-					[unsentEvents addObjectsFromArray:events];
-					[unsentEventsMap setObject:unsentEvents forKey:[NSNumber numberWithLong:gameId]];
 				}
 			}
 		}
-		
+			
 		usleep(6000000);
 	}
 	[pool release];
-	
 }
 
+- (void) addToUnsentEvents: (long) gameId: (NSArray*) events {
+	@synchronized (unsentEventsMap) {
+		NSMutableArray* unsentEvents = [unsentEventsMap objectForKey:[NSNumber numberWithLong:gameId]];
+		if (unsentEvents == nil) {
+			unsentEvents = [NSMutableArray arrayWithCapacity:[events count]];
+			[unsentEventsMap setObject:unsentEvents forKey:[NSNumber numberWithLong:gameId]];
+		}
+		[unsentEvents addObjectsFromArray:events];
+	}
+}
 
+- (void) sendEvent:(long) gameId: (GameEvent*) event {
+	[self addToUnsentEvents:gameId : [NSArray arrayWithObject:event]];	
+}
 
 
 @end

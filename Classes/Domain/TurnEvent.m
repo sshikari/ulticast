@@ -39,10 +39,22 @@ static NSArray* TURN_TYPES;
 //	return self;
 //}
 
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:turnType forKey:@"turnType"];
+	[aCoder encodeObject:player forKey:@"player"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	turnType = [[aDecoder decodeObjectForKey:@"turnType"] retain];
+	player = [[aDecoder decodeObjectForKey:@"player"] retain]; 
+	return self;
+}
+
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [super proxyForJson];
 	[dict setValue:turnType forKey:@"turnType"];	
-	[dict setValue:team forKey:@"team"];
 	[dict setValue:player forKey:@"player"];
     return dict;
 }

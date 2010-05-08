@@ -58,9 +58,8 @@ static NSArray* LABEL_LIST;
 - (void) doneSave {
 	// set notes here b/c when you edit notes, then directly click save instead of done, notes doesn't get saved.
 	[callEvent setNotes: notesTextField.text];
-	[gameLogMgr call: callEvent];
 	[parentDelegate performSelector: updateSuccessCallBack
-						 withObject: nil];
+						 withObject: callEvent];
 	[self.navigationController popViewControllerAnimated:YES];	
 }
 

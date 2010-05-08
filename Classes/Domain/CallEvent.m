@@ -54,11 +54,26 @@ static NSArray* CALL_TYPES;
 	}	
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeBool:contested forKey:@"contested"];
+	[aCoder encodeObject:caller forKey:@"caller"];
+	[aCoder encodeObject:fouler forKey:@"fouler"];
+	[aCoder encodeObject:callType forKey:@"callType"];	
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	contested = [aDecoder decodeBoolForKey:@"contested"];
+	caller = [[aDecoder decodeObjectForKey:@"caller"] retain];
+	fouler = [[aDecoder decodeObjectForKey:@"fouler"] retain];
+	callType = [[aDecoder decodeObjectForKey:@"callType"] retain];
+	return self;
+}
+
 
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [super proxyForJson];
 	[dict setValue:callType forKey:@"callType"];	
-	[dict setValue:team forKey:@"team"];
 	[dict setValue:[NSNumber numberWithBool: contested] forKey:@"contested"];
 	[dict setValue:caller forKey:@"caller"];
 	[dict setValue:fouler forKey:@"fouler"];

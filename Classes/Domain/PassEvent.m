@@ -21,9 +21,18 @@
 	return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:player forKey:@"player"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	player = [[aDecoder decodeObjectForKey:@"player"] retain];
+	return self;
+}
+
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [super proxyForJson];
-	[dict setValue:team forKey:@"teamName"];
 	[dict setValue:player forKey:@"player"];
 	return dict;	
 }

@@ -50,9 +50,26 @@ static NSArray* DISTANCE_OPTIONS;
 + (NSArray*) distanceOptions {
 	return DISTANCE_OPTIONS;		
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeInt:teamScore forKey:@"teamScore"];
+	[aCoder encodeObject:player forKey:@"player"];
+	[aCoder encodeObject:assister forKey:@"assister"];
+	[aCoder encodeObject:distanceDescriptor forKey:@"distanceDescriptor"];
+
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	teamScore = [aDecoder decodeIntForKey:@"timeType"];
+	player = [[aDecoder decodeObjectForKey:@"player"] retain];
+	assister = [[aDecoder decodeObjectForKey:@"assister"] retain];
+	distanceDescriptor = [[aDecoder decodeObjectForKey:@"distanceDescriptor"] retain];
+	return self;
+}
+
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [super proxyForJson];
-	[dict setValue:team forKey:@"team"];
 	[dict setValue:player forKey:@"player"];
 	[dict setValue:assister forKey:@"assister"];
 	[dict setValue:distanceDescriptor forKey:@"distanceDescriptor"];

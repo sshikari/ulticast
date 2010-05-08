@@ -247,10 +247,9 @@ static NSArray* LABEL_MAP;
 	// set notes here b/c when you edit notes, then directly click save instead of done, notes doesn't get saved.
 	[scoreEvent setNotes: notesTextField.text];
 	
-	[gameLogMgr score: scoreEvent];	
 	scoreSaved = YES;
 	[parentDelegate performSelector: updateSuccessCallBack
-					withObject: nil];		
+					withObject: scoreEvent];		
 
 	[self.navigationController popViewControllerAnimated:YES];	
 }

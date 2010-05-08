@@ -12,19 +12,28 @@
 #import "ScoreEvent.h";
 #import "TurnEvent.h";
 #import "CallEvent.h";
+#import "QuickGameInfo.h";
 
-@interface GameLogMgr : NSObject {
+extern long const NEW_GAME_ID;
+extern NSString *const IN_PROGRESS_GAME;
+
+
+@interface GameLogMgr : NSObject <NSCoding> {
 	long gameId;
+	
 	GameState *gameState;
-	NSMutableArray *unsentEvents;
-	NSMutableArray *sentEvents;
+	QuickGameInfo *gameInfo;
+	
+	// TODO these should be saved in db
+	NSMutableArray *events;
+
+	//	NSMutableArray *unsentEvents;
+//	NSMutableArray *sentEvents;
 }
 
-// get mgr for game id
-+(GameLogMgr*) gameLogMgr: (long)gid;
-+(GameLogMgr*) newGameLogMgr;
-+ (NSArray*) allGameLogMgrs;
 
+- (id) initWithTeams: (Team*) homeTeam: (Team*) awayTeam: (long) gid;
+- (int) tickGameTime;
 
 // info/state methods	
 -(int) team1Score;
@@ -36,6 +45,7 @@
 
 -(BOOL) team1HasPossession;
 -(BOOL) gameTimeRunning;
+-(BOOL) isGameOver;
 -(int) passes;
 -(NSString*) possessionTeamName;
 - (Team*) offensiveTeam;
@@ -63,13 +73,17 @@
 - (void) timeoutEndGame;
 
 // returns unsent events and tells mgr to move these msg to sent queue
--(NSArray*) transferUnsent;
+//-(NSArray*) transferUnsent;
 
 // debug
 - (void) logEvents;
 
 @property (nonatomic, retain) GameState *gameState;
+@property (nonatomic, retain) QuickGameInfo *gameInfo;
+
 @property long gameId;
-@property (nonatomic, retain) NSMutableArray* unsentEvents;
-@property (nonatomic, retain) NSMutableArray* sentEvents;
+@property (nonatomic, retain) NSMutableArray* events;
+
+//@property (nonatomic, retain) NSMutableArray* unsentEvents;
+//@property (nonatomic, retain) NSMutableArray* sentEvents;
 @end

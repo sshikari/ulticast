@@ -18,7 +18,7 @@ extern NSString *const NOTIFICATION_TURNOVER;
     NSTimer *timer;	
 	UINavigationController *setupViewController;
 	GameLogMgr *gameLogMgr;
-	
+	NSUndoManager *undoManager;
 	
     IBOutlet UILabel *team1NameLabel;
 	IBOutlet UILabel *team2NameLabel;
@@ -56,14 +56,7 @@ extern NSString *const NOTIFICATION_TURNOVER;
 	IBOutlet UITableView *mainDetailsTableView;
 }
 
-//- (UIViewController*) detailViewController: (NSIndexPath *)indexPath;
-//- (IBAction) scoreForTeam1:(id)sender;
-//- (IBAction) scoreForTeam2:(id)sender;
-//- (IBAction) changePossessionToTeam1:(id)sender;
-//- (IBAction) changePossessionToTeam2:(id)sender;
 - (IBAction) showCommentScreen:(id)sender;
-
-
 - (IBAction) addPass1:(id)sender;
 - (IBAction) addPass2:(id)sender;
 - (IBAction) addPass3:(id)sender;
@@ -71,7 +64,7 @@ extern NSString *const NOTIFICATION_TURNOVER;
 - (IBAction) addPass5:(id)sender;
 - (IBAction) addPass6:(id)sender;
 - (IBAction) addPass7:(id)sender;
-
+- (IBAction) undoButton:(id)sender;
 
 - (IBAction) addPass:(id)sender;
 
@@ -98,7 +91,9 @@ extern NSString *const NOTIFICATION_TURNOVER;
 - (void) callMenu;
 - (void) setupMenu;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gameLogMgr:(GameLogMgr*) gLogMgr;
 
+@property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic, retain) GameLogMgr *gameLogMgr;
 @property (nonatomic, retain) UINavigationController *setupViewController;
 @property (nonatomic, retain) NSTimer *timer;

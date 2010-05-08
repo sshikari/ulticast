@@ -82,37 +82,6 @@ static NSDateFormatter *DATE_FORMAT;
 	return ev;
 }
 
-//+ (GameEvent*) passEvent: (Team*) teamName {
-//    return [[[PassEvent alloc] initWithParams:teamName : nil] autorelease];
-//}
-
-//+ (GameEvent*) foulEvent: (NSString*) teamName {
-//	return [[[CallEvent alloc] initWithParams:EVENT_FOUL: team: nil] autorelease];
-//}
-//
-//+ (GameEvent*) dropEvent: (NSString*) teamName {
-//	return [[[TurnEvent alloc] initWithParams: TURN_DROP : teamName:nil] autorelease];	
-//}
-//
-//+ (GameEvent*) pickEvent: (NSString*) teamName {
-//	return [[[TurnEvent alloc] initWithParams: TURN_THROW_AWAY:teamName :nil] autorelease];	
-//}
-//
-//+ (GameEvent*) blockEvent: (NSString*) teamName {
-//	return [[[TurnEvent alloc] initWithParams: TURN_BLOCK:teamName: nil] autorelease];	
-//}
-
-//+ (GameEvent*) stallEvent: (NSString*) teamName {
-//	return [[[TurnEvent alloc] initWithParams: TURN_STALL : teamName:nil] autorelease];	
-//}
-
-//+ (GameEvent*) scoreEvent: (NSString*) teamName {
-//	return [[[ScoreEvent alloc] initWithParams: teamName: 0: nil: nil: nil: nil] autorelease];		
-//}
-//
-//+ (GameEvent*) timeoutEvent: (Team*) team {
-//	return [GameEvent teamEvent:EVENT_TIMEOUT: team];
-//}
 
 + (GameEvent*) startEndGameEvent: (NSString*) type {
 	GameEvent* ev = [[GameEvent alloc] init: type];
@@ -125,9 +94,34 @@ static NSDateFormatter *DATE_FORMAT;
 	return [NSString stringWithFormat: @"event type[%@], teamName[%@]\n", eventType, [team name]];	
 }
 
+//long eventId;     // unique identifier
+//NSString* eventType;   // type - e.g. call, turn, score, pass
+//Team *team;
+//NSDate* timestamp;    // time event occurred
+//NSString* notes;
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeInt:eventId forKey: @"eventId"];
+	[aCoder encodeObject:eventType forKey:@"eventType"];
+	[aCoder encodeObject:team forKey:@"team"];
+	[aCoder encodeObject:timestamp forKey:@"timestamp"];
+	[aCoder encodeObject:notes forKey:@"notes"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	eventId = [aDecoder decodeIntForKey:@"eventId"];
+	eventType = [[aDecoder decodeObjectForKey:@"eventType"] retain];
+	team = [[aDecoder decodeObjectForKey:@"team"] retain]; 
+	timestamp = [[aDecoder decodeObjectForKey:@"timestamp"] retain]; 
+	notes = [[aDecoder decodeObjectForKey:@"notes"] retain]; 
+	return self;
+}
+
 
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+	[dict setValue:team forKey:@"team"];
 	[dict setValue: [DATE_FORMAT stringFromDate:timestamp] forKey:@"timestamp"];
 	[dict setValue:eventType forKey:@"eventType"];
 	[dict setValue:notes forKey:@"notes"];

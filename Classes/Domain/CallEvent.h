@@ -13,8 +13,6 @@
 @interface CallEvent : GameEvent {
 	NSString* callType;
 	BOOL contested;
-//	NSString* player;
-//	NSString* fouler;
 	Player *caller;
 	Player *fouler;
 }

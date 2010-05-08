@@ -12,11 +12,9 @@
 extern NSString *const TUFTS;
 extern NSString *const HARVARD;
 
-@interface GameState : NSObject {
+@interface GameState : NSObject <NSCoding> {
 	Team *team1;
 	Team *team2;	
-//    NSString *team1Name;
-//    NSString *team2Name;
     int team1Score;
 	int team2Score;	
 	NSString *defense;
@@ -24,7 +22,9 @@ extern NSString *const HARVARD;
 	NSString *wind;
 	BOOL team1HasPossession;
 	BOOL gameTimeRunning;
-	int passes;
+	int passes;	
+	int gameTimeLeftSecs;
+	BOOL gameOver;
 }
 
 //@property (nonatomic, retain) NSString *team1Name;
@@ -35,8 +35,10 @@ extern NSString *const HARVARD;
 @property int team1Score;
 @property int team2Score;
 @property int passes;
+@property int gameTimeLeftSecs;
 @property BOOL team1HasPossession;
 @property BOOL gameTimeRunning;
+@property BOOL gameOver;
 @property (nonatomic, retain) NSString *offense;
 @property (nonatomic, retain) NSString *defense;
 @property (nonatomic, retain) NSString *wind;

@@ -33,13 +33,14 @@ extern NSString *const CALL_OFF_FOUL;
 extern NSString *const CALL_DEF_FOUL;
 extern NSString *const CALL_PICK;
 
-@interface GameEvent : NSObject {
+@interface GameEvent : NSObject<NSCoding> {
     long eventId;     // unique identifier
 	NSString* eventType;   // type - e.g. call, turn, score, pass
 	Team *team;  
 	NSDate* timestamp;    // time event occurred
 	NSString* notes;
 }
+
 
 + (GameEvent*) startGameEvent;
 + (GameEvent*) endGameEvent;
