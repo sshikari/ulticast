@@ -81,7 +81,7 @@ static DataPushMgr* sharedInstance = nil;
 
 -(id) init {
 	if (self = [super init]) {
-		[self setPushEventsURL: @"http://localhost:8080/testapp/game/%@"];	
+		[self setPushEventsURL: @"http://localhost:8080/ulticast/game/%@"];	
 		[self setUnsentEventsMap: [NSMutableDictionary dictionary]];
 	}
 	return self;
@@ -99,7 +99,7 @@ static DataPushMgr* sharedInstance = nil;
 	 - post all event data
 	 - posting multiple events
 	 */
-	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/testapp/event/saveEvents"];
+	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/ulticast/event/saveEvents"];
 	while(YES) {
 		NSLog(@"Trying to push...");
 		@synchronized(unsentEventsMap) {

@@ -107,7 +107,7 @@
 
 
 - (IBAction) fbButtonClicked:(id) sender {
-	FBLoginDialog* dialog = [[[FBLoginDialog alloc] initWithSession:fbSession] autorelease]; 
+	FBLoginDialog* dialog = [[FBLoginDialog alloc] initWithSession:fbSession]; 
 	[dialog show];	
 	[dialog release];
 }

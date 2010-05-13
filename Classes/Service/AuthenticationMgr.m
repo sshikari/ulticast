@@ -109,7 +109,7 @@ static AuthenticationMgr* sharedInstance = nil;
 	
 	// login at server, get auth key back
 	// save key in keystore		
-	NSURL *loginURL = [NSURL URLWithString:@"http://localhost:8080/testapp/login"];	
+	NSURL *loginURL = [NSURL URLWithString:@"http://localhost:8080/ulticast/login"];	
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:loginURL];
 	[request setPostValue:[self username] forKey:@"username"];
 	[request setPostValue:password forKey:@"password"];

@@ -91,7 +91,7 @@ static NSArray *WEATHER_OPTIONS;
 
 - (void) updateTeams {
 		// get user's teams and then opponent teams	
-		NSURL *feedURL = [NSURL URLWithString:@"http://localhost:8080/testapp/team/feed"];
+		NSURL *feedURL = [NSURL URLWithString:@"http://localhost:8080/ulticast/team/feed"];
 		long playerId = [[AuthenticationMgr sharedInstance] userPlayerId];
 		ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:feedURL];
 	 	[request setPostValue:[NSNumber numberWithInt: playerId] forKey:@"id"];
