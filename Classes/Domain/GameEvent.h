@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Team.h"
-
+#import "DomainObject.h"
 
 extern NSString *const EVENT_START_GAME;
 extern NSString *const EVENT_END_GAME;
@@ -33,7 +33,7 @@ extern NSString *const CALL_OFF_FOUL;
 extern NSString *const CALL_DEF_FOUL;
 extern NSString *const CALL_PICK;
 
-@interface GameEvent : NSObject<NSCoding> {
+@interface GameEvent : DomainObject {
     long eventId;     // unique identifier
 	NSString* eventType;   // type - e.g. call, turn, score, pass
 	Team *team;  

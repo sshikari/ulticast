@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONUtils.h"
+#import "DomainObject.h"
 
-@interface Player : NSObject<NSCoding, JSONInit> {
-	long playerId;
+@interface Player : DomainObject<JSONInit> {
 	int number;
 	NSString* nickname;
 	NSString* firstName;
@@ -19,7 +19,6 @@
 	NSArray* teams;
 }
 
-@property long playerId;
 @property int number;
 @property (retain, nonatomic) NSString* nickname;
 @property (retain, nonatomic) NSString* firstName;
@@ -31,5 +30,5 @@
 
 - (id) initWith: (int) num : (NSString*) firstName;
 - (NSString*) idString;
-- (id)proxyForJson;
+
 @end

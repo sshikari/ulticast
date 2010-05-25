@@ -147,6 +147,13 @@
 		127D401D119B5C54005E68A7 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D4011119B5C54005E68A7 /* FBSession.m */; };
 		127D401E119B5C54005E68A7 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D4013119B5C54005E68A7 /* FBStreamDialog.m */; };
 		127D401F119B5C54005E68A7 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D4015119B5C54005E68A7 /* FBXMLHandler.m */; };
+		127D407111A0639A005E68A7 /* Env.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D407011A0639A005E68A7 /* Env.m */; };
+		127D411A11A084E1005E68A7 /* DomainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D411911A084E1005E68A7 /* DomainObject.m */; };
+		127D41AB11A1E146005E68A7 /* AddTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D41A911A1E146005E68A7 /* AddTeamViewController.m */; };
+		127D41AC11A1E146005E68A7 /* AddTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127D41AA11A1E146005E68A7 /* AddTeamViewController.xib */; };
+		129205F611AB0493009B8186 /* LogicTests.octest in Resources */ = {isa = PBXBuildFile; fileRef = 1292052911AA392C009B8186 /* LogicTests.octest */; };
+		1292060A11AB0CED009B8186 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292060811AB0CED009B8186 /* PlayerDetailViewController.m */; };
+		1292060B11AB0CED009B8186 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1292060911AB0CED009B8186 /* PlayerDetailViewController.xib */; };
 		12A0E3211194BAB300097216 /* ultimateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A0E3201194BAB300097216 /* ultimateicon.png */; };
 		12ABC1661151D1AE005625CC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1651151D1AE005625CC /* CFNetwork.framework */; };
 		12ABC1681151D1C6005625CC /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */; };
@@ -161,6 +168,16 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1292052E11AA3933009B8186 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54 /* ulticast */;
+			remoteInfo = ulticast;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1237ACBD116FB60200C263E3 /* all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all.png; sourceTree = "<group>"; };
@@ -306,6 +323,18 @@
 		127D4013119B5C54005E68A7 /* FBStreamDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBStreamDialog.m; sourceTree = "<group>"; };
 		127D4014119B5C54005E68A7 /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMLHandler.h; sourceTree = "<group>"; };
 		127D4015119B5C54005E68A7 /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBXMLHandler.m; sourceTree = "<group>"; };
+		127D406F11A0639A005E68A7 /* Env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Env.h; sourceTree = "<group>"; };
+		127D407011A0639A005E68A7 /* Env.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Env.m; sourceTree = "<group>"; };
+		127D411811A084E1005E68A7 /* DomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainObject.h; sourceTree = "<group>"; };
+		127D411911A084E1005E68A7 /* DomainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainObject.m; sourceTree = "<group>"; };
+		127D41A811A1E146005E68A7 /* AddTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeamViewController.h; sourceTree = "<group>"; };
+		127D41A911A1E146005E68A7 /* AddTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeamViewController.m; sourceTree = "<group>"; };
+		127D41AA11A1E146005E68A7 /* AddTeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTeamViewController.xib; sourceTree = "<group>"; };
+		1292052911AA392C009B8186 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1292052A11AA392C009B8186 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
+		1292060711AB0CED009B8186 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		1292060811AB0CED009B8186 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		1292060911AB0CED009B8186 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		12A0E3201194BAB300097216 /* ultimateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ultimateicon.png; sourceTree = "<group>"; };
 		12ABC1651151D1AE005625CC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
@@ -326,6 +355,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1292052611AA392C009B8186 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E27FAF116C453800A920EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,6 +491,8 @@
 				1237ACE5116FB60200C263E3 /* TurnEvent.m */,
 				1237B050117130C600C263E3 /* QuickGameInfo.h */,
 				1237B051117130C600C263E3 /* QuickGameInfo.m */,
+				127D411811A084E1005E68A7 /* DomainObject.h */,
+				127D411911A084E1005E68A7 /* DomainObject.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -503,6 +541,8 @@
 				1237B3B41172881D00C263E3 /* AuthenticationMgr.m */,
 				1237B98B117BCEF900C263E3 /* GameLogMgrPool.h */,
 				1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */,
+				127D406F11A0639A005E68A7 /* Env.h */,
+				127D407011A0639A005E68A7 /* Env.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -520,6 +560,9 @@
 		1237AD02116FB60200C263E3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1292060711AB0CED009B8186 /* PlayerDetailViewController.h */,
+				1292060811AB0CED009B8186 /* PlayerDetailViewController.m */,
+				1292060911AB0CED009B8186 /* PlayerDetailViewController.xib */,
 				1237B02B11712BD100C263E3 /* QuickGameViewController.h */,
 				1237B02C11712BD100C263E3 /* QuickGameViewController.m */,
 				1237B02D11712BD100C263E3 /* QuickGameViewController.xib */,
@@ -557,6 +600,9 @@
 				1237B35811726CCF00C263E3 /* LoginViewController.h */,
 				1237B35911726CCF00C263E3 /* LoginViewController.m */,
 				1237B35A11726CCF00C263E3 /* LoginViewController.xib */,
+				127D41A811A1E146005E68A7 /* AddTeamViewController.h */,
+				127D41A911A1E146005E68A7 /* AddTeamViewController.m */,
+				127D41AA11A1E146005E68A7 /* AddTeamViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -618,6 +664,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* ulticast.app */,
 				12E27FB1116C453800A920EE /* UnitTests.app */,
+				1292052911AA392C009B8186 /* LogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -644,6 +691,7 @@
 				12E2828E116C5E7800A920EE /* CFNetwork.framework */,
 				12E28293116C5EB000A920EE /* SystemConfiguration.framework */,
 				12E28295116C5EC800A920EE /* libz.1.2.3.dylib */,
+				1292052A11AA392C009B8186 /* LogicTests-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -669,6 +717,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1292052811AA392C009B8186 /* LogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1292052D11AA392D009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */;
+			buildPhases = (
+				1292052411AA392C009B8186 /* Resources */,
+				1292052511AA392C009B8186 /* Sources */,
+				1292052611AA392C009B8186 /* Frameworks */,
+				1292052711AA392C009B8186 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1292052F11AA3933009B8186 /* PBXTargetDependency */,
+			);
+			name = LogicTests;
+			productName = LogicTests;
+			productReference = 1292052911AA392C009B8186 /* LogicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		12E27FB0116C453800A920EE /* UnitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12E27FB6116C453900A920EE /* Build configuration list for PBXNativeTarget "UnitTests" */;
@@ -718,11 +785,20 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ulticast */,
 				12E27FB0116C453800A920EE /* UnitTests */,
+				1292052811AA392C009B8186 /* LogicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1292052411AA392C009B8186 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129205F611AB0493009B8186 /* LogicTests.octest in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E27FAD116C453800A920EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -772,12 +848,27 @@
 				1250007A117D3AE7008CC83C /* Default.png in Resources */,
 				12A0E3211194BAB300097216 /* ultimateicon.png in Resources */,
 				127D4016119B5C54005E68A7 /* FBConnect.bundle in Resources */,
+				127D41AC11A1E146005E68A7 /* AddTeamViewController.xib in Resources */,
+				1292060B11AB0CED009B8186 /* PlayerDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1292052711AA392C009B8186 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		12E28088116C497700A920EE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -789,11 +880,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/Google-Testing/RunIPhoneUnitTest.sh\n\n";
+			shellScript = "
+
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1292052511AA392C009B8186 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E27FAE116C453800A920EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -908,12 +1008,82 @@
 				127D401D119B5C54005E68A7 /* FBSession.m in Sources */,
 				127D401E119B5C54005E68A7 /* FBStreamDialog.m in Sources */,
 				127D401F119B5C54005E68A7 /* FBXMLHandler.m in Sources */,
+				127D407111A0639A005E68A7 /* Env.m in Sources */,
+				127D411A11A084E1005E68A7 /* DomainObject.m in Sources */,
+				127D41AB11A1E146005E68A7 /* AddTeamViewController.m in Sources */,
+				1292060A11AB0CED009B8186 /* PlayerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1292052F11AA3933009B8186 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* ulticast */;
+			targetProxy = 1292052E11AA3933009B8186 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1292052B11AA392C009B8186 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "LogicTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = LogicTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1292052C11AA392C009B8186 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "LogicTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = LogicTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		12E27FB4116C453900A920EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1000,7 +1170,7 @@
 				HEADER_SEARCH_PATHS = /Users/emailrchang/code/web/ulticast/facebook/src;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.1.3;
+				SDKROOT = iphonesimulator3.1;
 			};
 			name = Debug;
 		};
@@ -1013,13 +1183,22 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.1.3;
+				SDKROOT = iphonesimulator3.1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1292052D11AA392D009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1292052B11AA392C009B8186 /* Debug */,
+				1292052C11AA392C009B8186 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		12E27FB6116C453900A920EE /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

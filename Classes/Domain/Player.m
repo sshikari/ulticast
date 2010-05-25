@@ -12,7 +12,6 @@
 
 @implementation Player
 
-@synthesize playerId;
 @synthesize number;
 @synthesize nickname;
 @synthesize firstName;
@@ -23,13 +22,12 @@
 
 - (id) initFromDictionary: (NSDictionary*) dict {
 	self = [super init];
-	[self setPlayerId:[[dict objectForKey: @"id"] longValue]];
-	[self setNumber:[[dict objectForKey: @"number"] intValue]];
+	self = [super initFromDictionary:dict];
+	[self setNumber:[Utils nilifyInt: [dict objectForKey: @"number"]]];
 	[self setNickname:[Utils nilify:[dict objectForKey: @"nickname"]]];
-	[self setFirstName:[Utils nilify:[dict objectForKey: @"firstName"]]];
-	[self setLastName:[Utils nilify:[dict objectForKey: @"lastName"]]];
+	[self setFirstName:[Utils nilify:[dict objectForKey: @"first_name"]]];
+	[self setLastName:[Utils nilify:[dict objectForKey: @"last_name"]]];
 	[self setPosition:[Utils nilify:[dict objectForKey: @"position"]]];
-	// TODO deJSON list if available
  	NSArray *arrayTeams = [Utils nilify:[dict objectForKey: @"teams"]];
 	if (arrayTeams != nil && [arrayTeams count] != 0) {
 		[self setTeams:[Utils fromJSON:arrayTeams: [Team class]]]; 
@@ -62,7 +60,7 @@
 //NSArray* teams;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-	[aCoder encodeInt:playerId forKey:@"playerId"];
+	[super encodeWithCoder:aCoder];
 	[aCoder encodeInt:number forKey:@"number"];
 	[aCoder encodeObject:nickname forKey:@"nickname"];
 	[aCoder encodeObject:firstName forKey:@"firstName"];
@@ -73,7 +71,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super init];
-	playerId = [aDecoder decodeIntForKey:@"playerId"];
+	[super initWithCoder:aDecoder];
 	number = [aDecoder decodeIntForKey:@"number"];	
 	nickname = [[aDecoder decodeObjectForKey:@"nickname"] retain];
 	firstName = [[aDecoder decodeObjectForKey:@"firstName"] retain];
@@ -91,13 +89,15 @@
 	else {
 		return NSOrderedAscending;
 	}
-
 }
 
 - (id)proxyForJson {
-	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-	[dict setValue:[NSNumber numberWithLong:playerId] forKey:@"id"];
-	[dict setValue:firstName forKey:@"firstName"];
+	NSMutableDictionary *dict = [super proxyForJson];
+	[dict setValue:nickname forKey:@"nickname"];
+	[dict setValue:firstName forKey:@"first_name"];
+	[dict setValue:lastName forKey:@"last_name"];
+	[dict setValue:[NSNumber numberWithInt: number] forKey:@"number"];
+
 	return dict;	
 }
 

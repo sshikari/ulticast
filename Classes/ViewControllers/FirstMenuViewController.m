@@ -34,7 +34,9 @@
 
 
 - (void) logoutButtonPushed {
-	[[AuthenticationMgr sharedInstance] logout];
+	if ( ![[AuthenticationMgr sharedInstance] logout]) {
+		NSLog(@"Hm... logout failed");
+	}
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	//[self.navigationController popToRootViewControllerAnimated:NO];
 	[self.navigationController setViewControllers:[NSArray arrayWithObject:loginViewController] animated: YES];

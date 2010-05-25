@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Team.h"
 
 @interface ReferenceDataMgr : NSObject {
 	NSArray* currentUsersTeams;
@@ -23,6 +23,10 @@
 - (NSArray*) locations;
 - (NSArray*) weatherOptions;
 - (NSArray*) windOptions;
+
+- (void) addTeam: (Team*) team : (NSError**) didFail;
+- (void) deleteTeam: (Team*) team : (NSError**) didFail;
+
 
 @property (nonatomic, retain) NSArray* currentUsersTeams;
 @property (nonatomic, retain) NSArray* currentOpponentsTeams;

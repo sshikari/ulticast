@@ -8,7 +8,13 @@
 
 #import "TeamsViewController.h"
 #import "ReferenceDataMgr.h"
+#import "AddTeamViewController.h"
+#import "Utils.h"
 
+#define MY_TEAMS_SEGMENT 0
+#define OPPONENTS_SEGMENT 1
+
+#define TEAMS_SECTION 0
 
 @interface TeamsViewController(private)
 - (NSArray*) teamsList;
@@ -29,11 +35,77 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
+	self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	myTeams = [[[ReferenceDataMgr sharedInstance] myTeams] retain];
 	opponentTeams = [[[ReferenceDataMgr sharedInstance] teams] retain];
+	
+	teamsTableView.allowsSelectionDuringEditing = YES;
+
+}
+
+- (void) doneAddTeam: (Team*) teamToAdd {
+	NSLog(@"adding team : %@", teamToAdd);
+	teamsSegmentedControl.selectedSegmentIndex = teamToAdd.myTeam ? 0 : 1;
+	[myTeams release];
+	[opponentTeams release];
+	myTeams = [[[ReferenceDataMgr sharedInstance] myTeams] retain];
+	opponentTeams = [[[ReferenceDataMgr sharedInstance] teams] retain];
+	[teamsTableView reloadData];
+}
+
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	
+	[teamsTableView beginUpdates];
+	
+	int teamCount = [[self teamsList] count];
+    NSArray *teamInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:teamCount inSection:0]];
+    
+    if (editing) {
+        [teamsTableView insertRowsAtIndexPaths:teamInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
+	} else {
+        [teamsTableView deleteRowsAtIndexPaths:teamInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
+    }
+    
+    [teamsTableView endUpdates];		
+	[teamsTableView setEditing:editing animated:animated];
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCellEditingStyle style = UITableViewCellEditingStyleNone;
+    if (indexPath.section == TEAMS_SECTION) {
+        // If this is the last item, it's the insertion row.
+        if (indexPath.row == [[self teamsList] count]) {
+            style = UITableViewCellEditingStyleInsert;
+        }
+        else {
+            style = UITableViewCellEditingStyleDelete;
+        }
+    }
+    
+    return style;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+		Team *team = [[self teamsList] objectAtIndex: indexPath.row];
+		NSError* didFail = nil;
+		[[ReferenceDataMgr sharedInstance] deleteTeam: team: &didFail];
+		if (didFail) {
+			NSLog(@"Error saving");
+			[Utils showTimeoutAlert:self :@"Error" :[didFail.userInfo objectForKey:@"errorString"] :nil :@"OK"];
+			return;
+		} else {
+			[Utils showTimeoutAlert:self :@"Success" :@"Team deleted" :nil :@"OK"];
+			NSArray* rowArray = [NSArray arrayWithObject:indexPath];
+			myTeams = [[[ReferenceDataMgr sharedInstance] myTeams] retain];
+			opponentTeams = [[[ReferenceDataMgr sharedInstance] teams] retain];
+			[teamsTableView deleteRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationTop];
+			[teamsTableView reloadData];
+		}		
+	}  
 }
 
 
@@ -94,7 +166,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self teamsList] count];
+	return self.editing ? [[self teamsList] count] + 1 : [[self teamsList] count] ;
 }
 
 - (NSArray*) teamsList {
@@ -108,24 +180,46 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-			
-    // Set up the cell...
-	cell.textLabel.text = [[[self teamsList] objectAtIndex:indexPath.row] description];
-    return cell;
+ 	UITableViewCell *cell = nil;
+	
+	if (indexPath.row < [[self teamsList] count]) {
+		// Set up the cell...
+		static NSString *CellIdentifier = @"Cell";
+		
+		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		}		
+		cell.textLabel.text = [[[self teamsList] objectAtIndex:indexPath.row] description];
+	} else {
+		// If the row is outside the range, it's the row that was added to allow insertion (see tableView:numberOfRowsInSection:) so give it an appropriate label.
+		static NSString *AddTeamCellIdentifier = @"AddTeamCell";
+		
+		cell = [tableView dequeueReusableCellWithIdentifier:AddTeamCellIdentifier];
+		if (cell == nil) {
+			// Create a cell to display "Add Team".
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AddTeamCellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		}
+		cell.textLabel.text = @"Add Team";
+	}		
+	return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	AddTeamViewController *addTeamViewController = [[AddTeamViewController alloc] initWithNibName:@"AddTeamViewController" bundle:nil];
+	
+	if (indexPath.row >= [[self teamsList] count]) {
+		[addTeamViewController setEditing:YES animated:YES];
+		[addTeamViewController prep:@selector(doneAddTeam:) : self];
+	} else {
+		Team *team = [[self teamsList] objectAtIndex:indexPath.row];
+		addTeamViewController.team = team;
+	}
+
+	[self.navigationController pushViewController:addTeamViewController animated:YES];
+	[addTeamViewController release];                
 }
 
 

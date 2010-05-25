@@ -13,7 +13,8 @@
 #import "ASIFormDataRequest.h"
 #import "SBJSON.h"
 #import "Utils.h"
-
+#import "Env.h"
+#import "JSON.h"
 
 static ReferenceDataMgr* sharedInstance = nil;
 static NSArray *WIND_OPTIONS;
@@ -90,65 +91,49 @@ static NSArray *WEATHER_OPTIONS;
 }
 
 - (void) updateTeams {
-		// get user's teams and then opponent teams	
-		NSURL *feedURL = [NSURL URLWithString:@"http://localhost:8080/ulticast/team/feed"];
-		long playerId = [[AuthenticationMgr sharedInstance] userPlayerId];
+	    NSURL *feedURL = [NSURL URLWithString:[NSString stringWithFormat: @"%@/api/team/all", [[Env sharedInstance] hostURL]]];
+
+	    /*
+		   /overview?token=
+		   /all?token=      - only my teams
+				- isMyTeam
+				
+		   /detail?token, id
+		   /update token, id
+		   /new
+		   /delete
+		 */
+	
+
+    	NSLog(@"token: %@", [[AuthenticationMgr sharedInstance] authKey]);
 		ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:feedURL];
-	 	[request setPostValue:[NSNumber numberWithInt: playerId] forKey:@"id"];
-		[request startSynchronous];  // TODO make asychronous
-		NSError *error = [request error];
-		if (error != nil || [request responseStatusCode] != 200) {
-			NSString *response = [request responseString];
-			NSLog(@"Error code: %d : %@", [request responseStatusCode], response);
-			// TODO exception thrown that triggers alert view?
+    	[request setPostValue:[[AuthenticationMgr sharedInstance] authKey] forKey:@"token"];
+		[request startSynchronous];
+    	NSDictionary *dataMap = [Utils requestDataMap:request];
+    	NSError* error = [dataMap objectForKey:@"error"];
+      	if (error) {
+			NSLog(@"%@", error);
+			NSDictionary *userInfo = [error userInfo];
+			NSLog(@"%@", [userInfo objectForKey:@"errorString"]);
+			return;			
 		} else {
-			NSString *response = [request responseString];
-			SBJsonParser* jsonParser = [[SBJsonParser alloc] init];
-			NSDictionary* jsonObject = [jsonParser objectWithString:response];
-			NSLog(@"response : %@\n", response);
-			NSLog(@"object : %@\n", jsonObject);
-			// expecting map:
-			// myTeams -> List of teams, should include players
-			// opponents -> list of teams
-			NSArray* myTeamsArray = [jsonObject objectForKey: @"myTeams"];
-			NSArray* myTeamsConverted = [Utils fromJSON: myTeamsArray: [Team class]];
-			[self setCurrentUsersTeams:myTeamsConverted];
-			
-			NSArray* myOpponentsArray = [jsonObject objectForKey: @"opponents"];
-			NSArray* myOpponentsConverted = [Utils fromJSON: myOpponentsArray: [Team class]];
-			[self setCurrentOpponentsTeams: myOpponentsConverted];
+			NSArray* teams = [dataMap objectForKey: @"teams"];
+			NSArray* teamsConverted = [Utils fromJSON: teams: [Team class]];
+			NSMutableArray * myTeams = [NSMutableArray array];
+			NSMutableArray * oppTeams = [NSMutableArray array];
+
+			for (Team *team in teamsConverted) {
+				if ([team myTeam]) {
+					[myTeams addObject:team];	
+				} else {
+					[oppTeams addObject:team];
+				}
+			}
+			[self setCurrentUsersTeams:myTeams];
+			[self setCurrentOpponentsTeams:oppTeams];
 		}
-	
-	
 }
 - (NSArray*) teams {
-//	Player *bill = [[Player alloc] initWith: 21: @"Bill"];
-//	Player *hillary = [[Player alloc] initWith: 22: @"Hillary"];	
-//	Player *blake = [[Player alloc] initWith: 11: @"Blake"];
-//	Player *rich = [[Player alloc] initWith: 12: @"Rich"];
-//	
-//	Team *harvard = [[Team alloc] initWithName:@"Harvard"];
-//	Team *tufts = [[Team alloc] initWithName:@"Tufts"];
-//	NSArray* hPlayers = [NSArray arrayWithObjects:bill, hillary, 
-//						 [[Player alloc] initWith: 23: @"P23"],
-//						 [[Player alloc] initWith: 24: @"P24"],
-//						 [[Player alloc] initWith: 25: @"P25"],
-//						 [[Player alloc] initWith: 26: @"P26"],
-//						 [[Player alloc] initWith: 27: @"P27"],
-//						 nil];
-//	NSArray* tPlayers = [NSArray arrayWithObjects:rich, blake, 
-//						 [[Player alloc] initWith: 13: @"P13"],
-//						 [[Player alloc] initWith: 14: @"P14"],
-//						 [[Player alloc] initWith: 15: @"P15"],
-//						 [[Player alloc] initWith: 16: @"P16"],
-//						 [[Player alloc] initWith: 17: @"P17"],
-//						 nil];
-//	[tufts setPlayers: tPlayers];
-//	[harvard setPlayers: hPlayers];
-//	
-//	NSArray* teams = [NSArray arrayWithObjects: harvard, tufts, nil];
-//	[harvard release];
-//	[tufts release];
 	return currentOpponentsTeams;
 }
 
@@ -159,6 +144,54 @@ static NSArray *WEATHER_OPTIONS;
 								nil];
 }	
 
+- (void) deleteTeam: (Team*) team : (NSError**) didFail {
+	NSURL *feedURL = [[Env sharedInstance] teamDeleteURL]; 
+	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:feedURL];
+	[request setPostValue:[[AuthenticationMgr sharedInstance] authKey] forKey:@"token"];
+	[request setPostValue: [NSNumber numberWithLong: team.uid] forKey:@"id"];
+	[request setPostValue: [NSNumber numberWithLong: team.version] forKey:@"version"];
+	[request startSynchronous];
+	NSDictionary *dataMap = [Utils requestDataMap:request];
+	NSError* error = [dataMap objectForKey:@"error"];
+	if (error) {
+		*didFail = error;
+	} 
+}
+
+- (void) addTeam: (Team*) team : (NSError**) didFail {
+	BOOL newTeam = team.uid <= 0;
+	NSURL *feedURL = newTeam 
+						? [[Env sharedInstance] teamAddURL] 
+					    : [[Env sharedInstance] teamUpdateURL];
+	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:feedURL];
+	[request setPostValue:[[AuthenticationMgr sharedInstance] authKey] forKey:@"token"];
+	if (!newTeam) {
+		[request setPostValue: [NSNumber numberWithLong: team.uid] forKey:@"id"];
+		[request setPostValue: [NSNumber numberWithLong: team.version] forKey:@"version"];
+	}
+	[request setPostValue:team.name forKey:@"name"];
+	[request setPostValue:[NSNumber numberWithBool:team.myTeam] forKey:@"is_my_team"];
+	NSArray* players = [team players];
+	if (players != nil && players.count != 0) {
+		NSLog(@"%@", [players JSONRepresentation]);
+		[request setPostValue:[players JSONRepresentation] forKey:@"players"];
+	} 
+	//else {
+	//	[request setPostValue: [NSNumber numberWithBool:YES] forKey:@"no_player_update"];
+	//}
+			
+	[request startSynchronous];
+	NSDictionary *dataMap = [Utils requestDataMap:request];
+	NSError* error = [dataMap objectForKey:@"error"];
+	if (error) {
+		*didFail = error;
+	} else {
+		long newId = [[[dataMap objectForKey:@"team"] objectForKey:@"id"] longValue];
+		int version = [[[dataMap objectForKey:@"team"] objectForKey:@"version"] intValue]; 
+		[team setUid:newId];
+		[team setVersion:version];
+	}
+}
 
 //TODO
 //-- equals methods on objects so check box is shown when selection is already slected

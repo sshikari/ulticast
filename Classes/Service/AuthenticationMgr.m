@@ -10,21 +10,21 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "SBJsonParser.h"
+#import "Env.h"
+#import "Utils.h"
 
-//NSString *const AUTH_KEY = @"AUTH_KEY";
 NSString *const AUTH_MGR_KEY = @"AUTH_MGR_KEY";
+
 
 static AuthenticationMgr* sharedInstance = nil;
 
 @interface AuthenticationMgr()
-@property (nonatomic, retain) NSString* authKey;   
 @end
 
 
 @implementation AuthenticationMgr
 
 @synthesize username;
-@synthesize player;
 @synthesize authKey;
 
 // singleton methods
@@ -86,21 +86,27 @@ static AuthenticationMgr* sharedInstance = nil;
 	}
 }
 
-- (long) userPlayerId {
-	return player.playerId;
-}
 
 - (BOOL) isLoggedIn {
 	return authKey.length != 0;	
 }
 - (BOOL) logout {
+	NSURL *loginURL = [NSURL URLWithString:[NSString stringWithFormat: @"%@/api/logout", [[Env sharedInstance] hostURL]]];	
+	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:loginURL];
+	[request setPostValue:[self authKey] forKey:@"token"];
+	[request startSynchronous];
+	// TODO if logout fails, should we try again?
+	NSDictionary* dataMap = [Utils requestDataMap:request];
+	if (dataMap == nil)
+		return NO;
+		
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:AUTH_MGR_KEY];
 	[username release];
 	[authKey release];
-	[player release];
 	username = nil;
 	authKey = nil;
-	player = nil;
+	
+	
 	return YES;
 }
 
@@ -109,44 +115,32 @@ static AuthenticationMgr* sharedInstance = nil;
 	
 	// login at server, get auth key back
 	// save key in keystore		
-	NSURL *loginURL = [NSURL URLWithString:@"http://localhost:8080/ulticast/login"];	
+	NSURL *loginURL = [NSURL URLWithString:[NSString stringWithFormat: @"%@/api/login", [[Env sharedInstance] hostURL]]];	
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:loginURL];
 	[request setPostValue:[self username] forKey:@"username"];
 	[request setPostValue:password forKey:@"password"];
-	[request startSynchronous];  // TODO make asychronous
-	NSError *error = [request error];	 
-	if (error != nil || [request responseStatusCode] != 200) {
-		NSString *response = [request responseString];
-		NSLog(@"Error code: %d : %@", [request responseStatusCode], response);
-		return NO;			
-	} else {		
-		NSString *response = [request responseString];		
-		SBJsonParser* jsonParser = [[SBJsonParser alloc] init];
-		NSDictionary* jsonObject = [jsonParser objectWithString:response];
-		NSLog(@"response : %@\n", response);
-		NSLog(@"object : %@\n", jsonObject);
-
- 		NSString* aKey = @"test_auth_key";
-		Player *playr = [[Player alloc] initFromDictionary:jsonObject];
-		[self setPlayer: playr];
-		[self setAuthKey:aKey];
-		
-		[playr release];
-		[jsonParser release];
-		return YES;
-	} 
+	[request startSynchronous];
+	
+	NSDictionary* dataMap = [Utils requestDataMap:request];
+	NSError *error = [dataMap objectForKey:@"error"];
+	if (error)
+		return NO;
+	
+	NSString* aKey = [dataMap objectForKey:@"token"];	
+	NSLog(@"Token : %@", aKey);					
+	[self setAuthKey:aKey];
+	[self saveUserInfo];
+	return YES;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
 	[aCoder encodeObject:username forKey:@"username"];
-	[aCoder encodeObject:player forKey:@"player"];
 	[aCoder encodeObject:authKey forKey:@"authKey"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super init];
 	username = [[aDecoder decodeObjectForKey:@"username"] retain];
-	player = [[aDecoder decodeObjectForKey:@"player"] retain]; 
 	authKey = [[aDecoder decodeObjectForKey:@"authKey"] retain]; 
 	return self;
 }

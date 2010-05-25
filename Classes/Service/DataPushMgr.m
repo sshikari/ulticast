@@ -11,6 +11,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "GameLogMgrPool.h"
+#import "Env.h"
 
 static DataPushMgr* sharedInstance = nil;
 
@@ -81,7 +82,7 @@ static DataPushMgr* sharedInstance = nil;
 
 -(id) init {
 	if (self = [super init]) {
-		[self setPushEventsURL: @"http://localhost:8080/ulticast/game/%@"];	
+		[self setPushEventsURL: [NSString stringWithFormat: @"%@/event/saveEvents", [[Env sharedInstance] hostURL]]];	
 		[self setUnsentEventsMap: [NSMutableDictionary dictionary]];
 	}
 	return self;
@@ -99,7 +100,7 @@ static DataPushMgr* sharedInstance = nil;
 	 - post all event data
 	 - posting multiple events
 	 */
-	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/ulticast/event/saveEvents"];
+	//NSURL *url = [NSURL URLWithString:@"http://localhost:8080/ulticast/event/saveEvents"];
 	while(YES) {
 		NSLog(@"Trying to push...");
 		@synchronized(unsentEventsMap) {
@@ -110,7 +111,7 @@ static DataPushMgr* sharedInstance = nil;
 				NSLog(@"events: %@", events);
 				@try {
 					if ([events count] != 0) {
-							ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+						ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString: [self pushEventsURL]]];
 							NSLog(@"Posting event : %@", [events JSONRepresentation]);
 						
 							[request setPostValue:gameId forKey:@"gameId"];

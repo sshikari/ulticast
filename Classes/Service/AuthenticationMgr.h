@@ -13,9 +13,6 @@ extern NSString *const AUTH_KEY;
 
 @interface AuthenticationMgr : NSObject {
     NSString* username;
-	Player* player;
-
-@private
 	NSString* authKey;
 
 }
@@ -23,11 +20,10 @@ extern NSString *const AUTH_KEY;
 + (AuthenticationMgr*)sharedInstance;
 - (BOOL) login: (NSString*) username: (NSString*) password;
 - (BOOL) logout;
-- (long) userPlayerId;
 - (void) saveUserInfo;
 - (BOOL) isLoggedIn;
 
 @property (nonatomic, retain) NSString* username;
-@property (nonatomic, retain) Player* player;
+@property (nonatomic, retain) NSString* authKey;   
 
 @end

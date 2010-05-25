@@ -11,15 +11,16 @@
 
 @implementation Team
 
-@synthesize teamId;
+@synthesize myTeam;
 @synthesize name;
 @synthesize players;
 
 
 - (id) initFromDictionary: (NSDictionary*) dict {
 	self = [super init];
-	[self setTeamId:[[dict objectForKey: @"id"] longValue]];
-	[self setName:[dict objectForKey: @"teamName"]];
+	self = [super initFromDictionary:dict];
+	[self setName:[dict objectForKey: @"name"]];
+	[self setMyTeam: [[dict objectForKey:@"is_my_team"] boolValue] ];
 	NSArray* playersArray = [Utils nilify:[dict objectForKey:@"players"]];
 	if (playersArray != nil && playersArray.count != 0) {		
 		NSArray *playersUnsorted = [Utils fromJSON:playersArray: Player.class];
@@ -44,7 +45,7 @@
 	for (int i=0; i<[players count]; i++) {
 		[names addObject:[[players objectAtIndex:i] firstName] ];
 	}
-	return names; //TODO... this breaks... why? autorelease];
+	return names;
 }
 
 - (BOOL) isMyTeam: (NSString*) n {
@@ -56,14 +57,14 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-	[aCoder encodeInt:teamId forKey:@"team1"];
+	[super encodeWithCoder:aCoder];
 	[aCoder encodeObject:name forKey:@"name"];
 	[aCoder encodeObject:players forKey:@"players"];		
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super init];
-	teamId = [aDecoder decodeIntForKey:@"team1"];
+	[super initWithCoder:aDecoder];
 	name = [[aDecoder decodeObjectForKey:@"name"] retain];
 	players = [[aDecoder decodeObjectForKey:@"players"] retain];
 	return self;	
@@ -71,7 +72,6 @@
 
 - (id)proxyForJson {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-	[dict setValue:[NSNumber numberWithInt: teamId] forKey:@"teamId"];
 	[dict setValue:name forKey:@"name"];
 	//[dict setValue:players forKey:@"players"];
 	return dict;	

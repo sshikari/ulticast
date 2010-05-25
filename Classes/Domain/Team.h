@@ -8,20 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "DomainObject.h"
 
-@interface Team : NSObject<NSCoding, JSONInit> {
-	long teamId;
+@interface Team : DomainObject {
 	NSString* name;
+	BOOL myTeam;
 	// Location *location;
 	NSArray* players;
 }
 
 - (id) initWithName: (NSString*) n;
 
-- (BOOL) isMyTeam: (NSString*) name;	
 - (NSArray*) playerNames;
 		
-@property long teamId;
+@property BOOL myTeam;
 @property (retain, nonatomic) NSString* name;
 @property (retain, nonatomic) NSArray* players;
 

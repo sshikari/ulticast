@@ -201,7 +201,7 @@ GameLogger
 
 
 - (NSArray*) otherTeamPlayerNames: (NSString*) tName {
-	if ([[gameState team1] isMyTeam:tName]) {
+	if ([[gameState team1] myTeam]) {
 		return [[gameState team2] playerNames];
 	} else {
 		return [[gameState team1] playerNames];
@@ -209,7 +209,7 @@ GameLogger
 }
 
 - (NSArray*) teamPlayerNames: (NSString*)tName {
-	if ([[gameState team1] isMyTeam:tName]) {
+	if ([[gameState team1] myTeam]) {
 		return [[gameState team1] playerNames];
 	} else {
 		return [[gameState team2] playerNames];
