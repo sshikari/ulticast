@@ -55,87 +55,20 @@
 		1237AD4C116FB60300C263E3 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD18116FB60300C263E3 /* SetupViewController.m */; };
 		1237AD4D116FB60300C263E3 /* TurnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD1A116FB60300C263E3 /* TurnViewController.m */; };
 		1237AD4E116FB60300C263E3 /* TurnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD1B116FB60300C263E3 /* TurnViewController.xib */; };
-		1237AD50116FB60300C263E3 /* all.png in Resources */ = {isa = PBXBuildFile; fileRef = 1237ACBD116FB60200C263E3 /* all.png */; };
-		1237AD51116FB60300C263E3 /* faves.png in Resources */ = {isa = PBXBuildFile; fileRef = 1237ACBE116FB60200C263E3 /* faves.png */; };
-		1237AD52116FB60300C263E3 /* frisbee.png in Resources */ = {isa = PBXBuildFile; fileRef = 1237ACBF116FB60200C263E3 /* frisbee.png */; };
-		1237AD53116FB60300C263E3 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 1237ACC0116FB60200C263E3 /* search.png */; };
-		1237AD54116FB60300C263E3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237ACC2116FB60200C263E3 /* MainWindow.xib */; };
-		1237AD55116FB60300C263E3 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACC7116FB60200C263E3 /* ASIAuthenticationDialog.m */; };
-		1237AD56116FB60300C263E3 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACC9116FB60200C263E3 /* ASIFormDataRequest.m */; };
-		1237AD57116FB60300C263E3 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACCB116FB60200C263E3 /* ASIHTTPRequest.m */; };
-		1237AD58116FB60300C263E3 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACCE116FB60200C263E3 /* ASIInputStream.m */; };
-		1237AD59116FB60300C263E3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACD0116FB60200C263E3 /* ASINetworkQueue.m */; };
-		1237AD5A116FB60300C263E3 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACD2116FB60200C263E3 /* ASINSStringAdditions.m */; };
-		1237AD5B116FB60300C263E3 /* CallEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACD5116FB60200C263E3 /* CallEvent.m */; };
-		1237AD5C116FB60300C263E3 /* GameEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACD7116FB60200C263E3 /* GameEvent.m */; };
-		1237AD5D116FB60300C263E3 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACD9116FB60200C263E3 /* GameState.m */; };
-		1237AD5E116FB60300C263E3 /* PassEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACDB116FB60200C263E3 /* PassEvent.m */; };
-		1237AD5F116FB60300C263E3 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACDD116FB60200C263E3 /* Player.m */; };
-		1237AD60116FB60300C263E3 /* ScoreEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACDF116FB60200C263E3 /* ScoreEvent.m */; };
-		1237AD61116FB60300C263E3 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACE1116FB60200C263E3 /* Team.m */; };
-		1237AD62116FB60300C263E3 /* TimeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACE3116FB60200C263E3 /* TimeEvent.m */; };
-		1237AD63116FB60300C263E3 /* TurnEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACE5116FB60200C263E3 /* TurnEvent.m */; };
-		1237AD64116FB60300C263E3 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACE9116FB60200C263E3 /* NSObject+SBJSON.m */; };
-		1237AD65116FB60300C263E3 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACEB116FB60200C263E3 /* NSString+SBJSON.m */; };
-		1237AD66116FB60300C263E3 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACED116FB60200C263E3 /* SBJSON.m */; };
-		1237AD67116FB60300C263E3 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACEF116FB60200C263E3 /* SBJsonBase.m */; };
-		1237AD68116FB60300C263E3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACF1116FB60200C263E3 /* SBJsonParser.m */; };
-		1237AD69116FB60300C263E3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACF3116FB60200C263E3 /* SBJsonWriter.m */; };
-		1237AD6B116FB60300C263E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACF7116FB60200C263E3 /* Reachability.m */; };
-		1237AD6C116FB60300C263E3 /* DataPushMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFA116FB60200C263E3 /* DataPushMgr.m */; };
-		1237AD6D116FB60300C263E3 /* GameLogMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFC116FB60200C263E3 /* GameLogMgr.m */; };
-		1237AD6F116FB60300C263E3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD01116FB60200C263E3 /* Utils.m */; };
-		1237AD70116FB60300C263E3 /* CallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD03116FB60200C263E3 /* CallView.xib */; };
-		1237AD71116FB60300C263E3 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD05116FB60200C263E3 /* CallViewController.m */; };
-		1237AD72116FB60300C263E3 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD06116FB60200C263E3 /* CallViewController.xib */; };
-		1237AD73116FB60300C263E3 /* GameDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD08116FB60200C263E3 /* GameDetailsTableViewController.m */; };
-		1237AD74116FB60300C263E3 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD09116FB60200C263E3 /* GameView.xib */; };
-		1237AD75116FB60300C263E3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD0B116FB60200C263E3 /* GameViewController.m */; };
-		1237AD76116FB60300C263E3 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD0D116FB60200C263E3 /* GoalViewController.m */; };
-		1237AD77116FB60300C263E3 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD0E116FB60300C263E3 /* GoalViewController.xib */; };
-		1237AD78116FB60300C263E3 /* ListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD10116FB60300C263E3 /* ListSelectViewController.m */; };
-		1237AD79116FB60300C263E3 /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD12116FB60300C263E3 /* ScoreViewController.m */; };
-		1237AD7A116FB60300C263E3 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD14116FB60300C263E3 /* SelectionListViewController.m */; };
-		1237AD7B116FB60300C263E3 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD15116FB60300C263E3 /* SelectionListViewController.xib */; };
-		1237AD7C116FB60300C263E3 /* SetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD16116FB60300C263E3 /* SetupView.xib */; };
-		1237AD7D116FB60300C263E3 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD18116FB60300C263E3 /* SetupViewController.m */; };
-		1237AD7E116FB60300C263E3 /* TurnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD1A116FB60300C263E3 /* TurnViewController.m */; };
-		1237AD7F116FB60300C263E3 /* TurnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AD1B116FB60300C263E3 /* TurnViewController.xib */; };
-		1237AD80116FB60300C263E3 /* GameLogMgrTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AD1E116FB60300C263E3 /* GameLogMgrTest.m */; };
-		1237AE77116FC02700C263E3 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE70116FC02700C263E3 /* GTMIPhoneUnitTestDelegate.m */; };
-		1237AE78116FC02700C263E3 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE71116FC02700C263E3 /* GTMIPhoneUnitTestMain.m */; };
-		1237AE79116FC02700C263E3 /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE73116FC02700C263E3 /* GTMObjC2Runtime.m */; };
-		1237AE7A116FC02700C263E3 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AE75116FC02700C263E3 /* GTMSenTestCase.m */; };
-		1237AE7B116FC02700C263E3 /* RunIPhoneUnitTest.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1237AE76116FC02700C263E3 /* RunIPhoneUnitTest.sh */; };
-		1237AED0117040BA00C263E3 /* UltimateScorerTabAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237ACFE116FB60200C263E3 /* UltimateScorerTabAppDelegate.m */; };
 		1237AFE11171227000C263E3 /* FirstMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFDF1171227000C263E3 /* FirstMenuViewController.m */; };
 		1237AFE21171227000C263E3 /* FirstMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AFE01171227000C263E3 /* FirstMenuViewController.xib */; };
-		1237AFE31171227000C263E3 /* FirstMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFDF1171227000C263E3 /* FirstMenuViewController.m */; };
-		1237AFE41171227000C263E3 /* FirstMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237AFE01171227000C263E3 /* FirstMenuViewController.xib */; };
-		1237B02E11712BD100C263E3 /* QuickGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B02C11712BD100C263E3 /* QuickGameViewController.m */; };
-		1237B02F11712BD100C263E3 /* QuickGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B02D11712BD100C263E3 /* QuickGameViewController.xib */; };
 		1237B03011712BD100C263E3 /* QuickGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B02C11712BD100C263E3 /* QuickGameViewController.m */; };
 		1237B03111712BD100C263E3 /* QuickGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B02D11712BD100C263E3 /* QuickGameViewController.xib */; };
-		1237B052117130C600C263E3 /* QuickGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B051117130C600C263E3 /* QuickGameInfo.m */; };
 		1237B053117130C600C263E3 /* QuickGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B051117130C600C263E3 /* QuickGameInfo.m */; };
-		1237B059117131F600C263E3 /* GameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B058117131F600C263E3 /* GameLocation.m */; };
 		1237B05A117131F600C263E3 /* GameLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B058117131F600C263E3 /* GameLocation.m */; };
-		1237B07B11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */; };
 		1237B07C11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B07A11713E3B00C263E3 /* ReferenceDataMgr.m */; };
-		1237B2971171A26700C263E3 /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B2951171A26700C263E3 /* TeamsViewController.m */; };
-		1237B2981171A26700C263E3 /* TeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B2961171A26700C263E3 /* TeamsViewController.xib */; };
 		1237B2991171A26700C263E3 /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B2951171A26700C263E3 /* TeamsViewController.m */; };
 		1237B29A1171A26700C263E3 /* TeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B2961171A26700C263E3 /* TeamsViewController.xib */; };
-		1237B35B11726CCF00C263E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B35911726CCF00C263E3 /* LoginViewController.m */; };
-		1237B35C11726CCF00C263E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B35A11726CCF00C263E3 /* LoginViewController.xib */; };
 		1237B35D11726CCF00C263E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B35911726CCF00C263E3 /* LoginViewController.m */; };
 		1237B35E11726CCF00C263E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237B35A11726CCF00C263E3 /* LoginViewController.xib */; };
-		1237B3B51172881D00C263E3 /* AuthenticationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B3B41172881D00C263E3 /* AuthenticationMgr.m */; };
 		1237B3B61172881D00C263E3 /* AuthenticationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B3B41172881D00C263E3 /* AuthenticationMgr.m */; };
-		1237B98D117BCEF900C263E3 /* GameLogMgrPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */; };
 		1237B98E117BCEF900C263E3 /* GameLogMgrPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237B98C117BCEF900C263E3 /* GameLogMgrPool.m */; };
 		1250007A117D3AE7008CC83C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12500079117D3AE7008CC83C /* Default.png */; };
-		1250FE70117C2042008CC83C /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1250FE6F117C2042008CC83C /* Connect_iphone.png */; };
 		1250FE71117C2042008CC83C /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1250FE6F117C2042008CC83C /* Connect_iphone.png */; };
 		127D4016119B5C54005E68A7 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 127D4002119B5C54005E68A7 /* FBConnect.bundle */; };
 		127D4017119B5C54005E68A7 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D4005119B5C54005E68A7 /* FBConnectGlobal.m */; };
@@ -151,30 +84,24 @@
 		127D411A11A084E1005E68A7 /* DomainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D411911A084E1005E68A7 /* DomainObject.m */; };
 		127D41AB11A1E146005E68A7 /* AddTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127D41A911A1E146005E68A7 /* AddTeamViewController.m */; };
 		127D41AC11A1E146005E68A7 /* AddTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127D41AA11A1E146005E68A7 /* AddTeamViewController.xib */; };
-		129205F611AB0493009B8186 /* LogicTests.octest in Resources */ = {isa = PBXBuildFile; fileRef = 1292052911AA392C009B8186 /* LogicTests.octest */; };
 		1292060A11AB0CED009B8186 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292060811AB0CED009B8186 /* PlayerDetailViewController.m */; };
 		1292060B11AB0CED009B8186 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1292060911AB0CED009B8186 /* PlayerDetailViewController.xib */; };
+		1292077E11ADB3BF009B8186 /* FirstTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292077D11ADB3BF009B8186 /* FirstTest.m */; };
 		12A0E3211194BAB300097216 /* ultimateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A0E3201194BAB300097216 /* ultimateicon.png */; };
 		12ABC1661151D1AE005625CC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1651151D1AE005625CC /* CFNetwork.framework */; };
 		12ABC1681151D1C6005625CC /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */; };
 		12ABC16A1151D1D2005625CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ABC1691151D1D2005625CC /* SystemConfiguration.framework */; };
-		12E28289116C5E5800A920EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E28288116C5E5800A920EE /* UIKit.framework */; };
-		12E2828B116C5E5F00A920EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E2828A116C5E5F00A920EE /* CoreGraphics.framework */; };
-		12E2828D116C5E6500A920EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E2828C116C5E6500A920EE /* Foundation.framework */; };
-		12E2828F116C5E7800A920EE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E2828E116C5E7800A920EE /* CFNetwork.framework */; };
-		12E28294116C5EB000A920EE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E28293116C5EB000A920EE /* SystemConfiguration.framework */; };
-		12E28296116C5EC800A920EE /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E28295116C5EC800A920EE /* libz.1.2.3.dylib */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1292052E11AA3933009B8186 /* PBXContainerItemProxy */ = {
+		1292077511ADB39B009B8186 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1D6058900D05DD3D006BFB54 /* ulticast */;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
 			remoteInfo = ulticast;
 		};
 /* End PBXContainerItemProxy section */
@@ -330,16 +257,17 @@
 		127D41A811A1E146005E68A7 /* AddTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeamViewController.h; sourceTree = "<group>"; };
 		127D41A911A1E146005E68A7 /* AddTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeamViewController.m; sourceTree = "<group>"; };
 		127D41AA11A1E146005E68A7 /* AddTeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTeamViewController.xib; sourceTree = "<group>"; };
-		1292052911AA392C009B8186 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1292052A11AA392C009B8186 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		1292060711AB0CED009B8186 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		1292060811AB0CED009B8186 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		1292060911AB0CED009B8186 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
+		1292077211ADB396009B8186 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1292077C11ADB3BF009B8186 /* FirstTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTest.h; sourceTree = "<group>"; };
+		1292077D11ADB3BF009B8186 /* FirstTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTest.m; sourceTree = "<group>"; };
 		12A0E3201194BAB300097216 /* ultimateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ultimateicon.png; sourceTree = "<group>"; };
 		12ABC1651151D1AE005625CC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		12ABC1671151D1C6005625CC /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		12ABC1691151D1D2005625CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		12E27FB1116C453800A920EE /* UnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E27FB3116C453800A920EE /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		12E28288116C5E5800A920EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12E2828A116C5E5F00A920EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -355,23 +283,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1292052611AA392C009B8186 /* Frameworks */ = {
+		1292076F11ADB396009B8186 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12E27FAF116C453800A920EE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12E28289116C5E5800A920EE /* UIKit.framework in Frameworks */,
-				12E2828B116C5E5F00A920EE /* CoreGraphics.framework in Frameworks */,
-				12E2828D116C5E6500A920EE /* Foundation.framework in Frameworks */,
-				12E2828F116C5E7800A920EE /* CFNetwork.framework in Frameworks */,
-				12E28294116C5EB000A920EE /* SystemConfiguration.framework in Frameworks */,
-				12E28296116C5EC800A920EE /* libz.1.2.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +527,8 @@
 			children = (
 				1237AD1D116FB60300C263E3 /* GameLogMgrTest.h */,
 				1237AD1E116FB60300C263E3 /* GameLogMgrTest.m */,
+				1292077C11ADB3BF009B8186 /* FirstTest.h */,
+				1292077D11ADB3BF009B8186 /* FirstTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -663,8 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* ulticast.app */,
-				12E27FB1116C453800A920EE /* UnitTests.app */,
-				1292052911AA392C009B8186 /* LogicTests.octest */,
+				1292077211ADB396009B8186 /* LogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -717,42 +633,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1292052811AA392C009B8186 /* LogicTests */ = {
+		1292077111ADB396009B8186 /* LogicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1292052D11AA392D009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */;
+			buildConfigurationList = 1292077B11ADB3BA009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */;
 			buildPhases = (
-				1292052411AA392C009B8186 /* Resources */,
-				1292052511AA392C009B8186 /* Sources */,
-				1292052611AA392C009B8186 /* Frameworks */,
-				1292052711AA392C009B8186 /* ShellScript */,
+				1292076D11ADB396009B8186 /* Resources */,
+				1292076E11ADB396009B8186 /* Sources */,
+				1292076F11ADB396009B8186 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1292052F11AA3933009B8186 /* PBXTargetDependency */,
+				1292077611ADB39B009B8186 /* PBXTargetDependency */,
 			);
 			name = LogicTests;
 			productName = LogicTests;
-			productReference = 1292052911AA392C009B8186 /* LogicTests.octest */;
+			productReference = 1292077211ADB396009B8186 /* LogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
-		};
-		12E27FB0116C453800A920EE /* UnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 12E27FB6116C453900A920EE /* Build configuration list for PBXNativeTarget "UnitTests" */;
-			buildPhases = (
-				12E27FAD116C453800A920EE /* Resources */,
-				12E27FAE116C453800A920EE /* Sources */,
-				12E27FAF116C453800A920EE /* Frameworks */,
-				12E28088116C497700A920EE /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UnitTests;
-			productName = UnitTests;
-			productReference = 12E27FB1116C453800A920EE /* UnitTests.app */;
-			productType = "com.apple.product-type.application";
 		};
 		1D6058900D05DD3D006BFB54 /* ulticast */ = {
 			isa = PBXNativeTarget;
@@ -784,43 +681,16 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ulticast */,
-				12E27FB0116C453800A920EE /* UnitTests */,
-				1292052811AA392C009B8186 /* LogicTests */,
+				1292077111ADB396009B8186 /* LogicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1292052411AA392C009B8186 /* Resources */ = {
+		1292076D11ADB396009B8186 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				129205F611AB0493009B8186 /* LogicTests.octest in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12E27FAD116C453800A920EE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1237AD50116FB60300C263E3 /* all.png in Resources */,
-				1237AD51116FB60300C263E3 /* faves.png in Resources */,
-				1237AD52116FB60300C263E3 /* frisbee.png in Resources */,
-				1237AD53116FB60300C263E3 /* search.png in Resources */,
-				1237AD54116FB60300C263E3 /* MainWindow.xib in Resources */,
-				1237AD70116FB60300C263E3 /* CallView.xib in Resources */,
-				1237AD72116FB60300C263E3 /* CallViewController.xib in Resources */,
-				1237AD74116FB60300C263E3 /* GameView.xib in Resources */,
-				1237AD77116FB60300C263E3 /* GoalViewController.xib in Resources */,
-				1237AD7B116FB60300C263E3 /* SelectionListViewController.xib in Resources */,
-				1237AD7C116FB60300C263E3 /* SetupView.xib in Resources */,
-				1237AD7F116FB60300C263E3 /* TurnViewController.xib in Resources */,
-				1237AE7B116FC02700C263E3 /* RunIPhoneUnitTest.sh in Resources */,
-				1237AFE41171227000C263E3 /* FirstMenuViewController.xib in Resources */,
-				1237B02F11712BD100C263E3 /* QuickGameViewController.xib in Resources */,
-				1237B2981171A26700C263E3 /* TeamsViewController.xib in Resources */,
-				1237B35C11726CCF00C263E3 /* LoginViewController.xib in Resources */,
-				1250FE70117C2042008CC83C /* Connect_iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,98 +725,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1292052711AA392C009B8186 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		12E28088116C497700A920EE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-
-";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		1292052511AA392C009B8186 /* Sources */ = {
+		1292076E11ADB396009B8186 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12E27FAE116C453800A920EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1237AD55116FB60300C263E3 /* ASIAuthenticationDialog.m in Sources */,
-				1237AD56116FB60300C263E3 /* ASIFormDataRequest.m in Sources */,
-				1237AD57116FB60300C263E3 /* ASIHTTPRequest.m in Sources */,
-				1237AD58116FB60300C263E3 /* ASIInputStream.m in Sources */,
-				1237AD59116FB60300C263E3 /* ASINetworkQueue.m in Sources */,
-				1237AD5A116FB60300C263E3 /* ASINSStringAdditions.m in Sources */,
-				1237AD5B116FB60300C263E3 /* CallEvent.m in Sources */,
-				1237AD5C116FB60300C263E3 /* GameEvent.m in Sources */,
-				1237AD5D116FB60300C263E3 /* GameState.m in Sources */,
-				1237AD5E116FB60300C263E3 /* PassEvent.m in Sources */,
-				1237AD5F116FB60300C263E3 /* Player.m in Sources */,
-				1237AD60116FB60300C263E3 /* ScoreEvent.m in Sources */,
-				1237AD61116FB60300C263E3 /* Team.m in Sources */,
-				1237AD62116FB60300C263E3 /* TimeEvent.m in Sources */,
-				1237AD63116FB60300C263E3 /* TurnEvent.m in Sources */,
-				1237AD64116FB60300C263E3 /* NSObject+SBJSON.m in Sources */,
-				1237AD65116FB60300C263E3 /* NSString+SBJSON.m in Sources */,
-				1237AD66116FB60300C263E3 /* SBJSON.m in Sources */,
-				1237AD67116FB60300C263E3 /* SBJsonBase.m in Sources */,
-				1237AD68116FB60300C263E3 /* SBJsonParser.m in Sources */,
-				1237AD69116FB60300C263E3 /* SBJsonWriter.m in Sources */,
-				1237AD6B116FB60300C263E3 /* Reachability.m in Sources */,
-				1237AD6C116FB60300C263E3 /* DataPushMgr.m in Sources */,
-				1237AD6D116FB60300C263E3 /* GameLogMgr.m in Sources */,
-				1237AD6F116FB60300C263E3 /* Utils.m in Sources */,
-				1237AD71116FB60300C263E3 /* CallViewController.m in Sources */,
-				1237AD73116FB60300C263E3 /* GameDetailsTableViewController.m in Sources */,
-				1237AD75116FB60300C263E3 /* GameViewController.m in Sources */,
-				1237AD76116FB60300C263E3 /* GoalViewController.m in Sources */,
-				1237AD78116FB60300C263E3 /* ListSelectViewController.m in Sources */,
-				1237AD79116FB60300C263E3 /* ScoreViewController.m in Sources */,
-				1237AD7A116FB60300C263E3 /* SelectionListViewController.m in Sources */,
-				1237AD7D116FB60300C263E3 /* SetupViewController.m in Sources */,
-				1237AD7E116FB60300C263E3 /* TurnViewController.m in Sources */,
-				1237AD80116FB60300C263E3 /* GameLogMgrTest.m in Sources */,
-				1237AE77116FC02700C263E3 /* GTMIPhoneUnitTestDelegate.m in Sources */,
-				1237AE78116FC02700C263E3 /* GTMIPhoneUnitTestMain.m in Sources */,
-				1237AE79116FC02700C263E3 /* GTMObjC2Runtime.m in Sources */,
-				1237AE7A116FC02700C263E3 /* GTMSenTestCase.m in Sources */,
-				1237AED0117040BA00C263E3 /* UltimateScorerTabAppDelegate.m in Sources */,
-				1237AFE31171227000C263E3 /* FirstMenuViewController.m in Sources */,
-				1237B02E11712BD100C263E3 /* QuickGameViewController.m in Sources */,
-				1237B052117130C600C263E3 /* QuickGameInfo.m in Sources */,
-				1237B059117131F600C263E3 /* GameLocation.m in Sources */,
-				1237B07B11713E3B00C263E3 /* ReferenceDataMgr.m in Sources */,
-				1237B2971171A26700C263E3 /* TeamsViewController.m in Sources */,
-				1237B35B11726CCF00C263E3 /* LoginViewController.m in Sources */,
-				1237B3B51172881D00C263E3 /* AuthenticationMgr.m in Sources */,
-				1237B98D117BCEF900C263E3 /* GameLogMgrPool.m in Sources */,
+				1292077E11ADB3BF009B8186 /* FirstTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,15 +802,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1292052F11AA3933009B8186 /* PBXTargetDependency */ = {
+		1292077611ADB39B009B8186 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1D6058900D05DD3D006BFB54 /* ulticast */;
-			targetProxy = 1292052E11AA3933009B8186 /* PBXContainerItemProxy */;
+			targetProxy = 1292077511ADB39B009B8186 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1292052B11AA392C009B8186 /* Debug */ = {
+		1292077311ADB397009B8186 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1055,7 +839,7 @@
 			};
 			name = Debug;
 		};
-		1292052C11AA392C009B8186 /* Release */ = {
+		1292077411ADB397009B8186 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1080,55 +864,6 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
 				WRAPPER_EXTENSION = octest;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		12E27FB4116C453900A920EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphoneos3.1.3;
-			};
-			name = Debug;
-		};
-		12E27FB5116C453900A920EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphoneos3.1.3;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1170,7 +905,7 @@
 				HEADER_SEARCH_PATHS = /Users/emailrchang/code/web/ulticast/facebook/src;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.1;
+				SDKROOT = iphonesimulator3.1.3;
 			};
 			name = Debug;
 		};
@@ -1183,27 +918,18 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.1;
+				SDKROOT = iphonesimulator3.1.3;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1292052D11AA392D009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */ = {
+		1292077B11ADB3BA009B8186 /* Build configuration list for PBXNativeTarget "LogicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1292052B11AA392C009B8186 /* Debug */,
-				1292052C11AA392C009B8186 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		12E27FB6116C453900A920EE /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12E27FB4116C453900A920EE /* Debug */,
-				12E27FB5116C453900A920EE /* Release */,
+				1292077311ADB397009B8186 /* Debug */,
+				1292077411ADB397009B8186 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
